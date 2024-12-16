@@ -37,6 +37,12 @@ body {
   @apply flex flex-col items-center justify-center
 }
 
+
+/* //////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////// */
+/* text related */
+
+
 .accent1-t {
  @apply text-[#A58964]
 }
@@ -45,10 +51,64 @@ body {
   @apply bg-[#A58964]
 }
 
+.accent1-br {
+  @apply border-2 border-[#A58964] accent1-t
+}
+
 .accent2-t {
-  @apply text-[#102226]
+  @apply text-[#28465e]
  }
 
  .accent2-bg {
   @apply bg-[#102226]
+}
+
+.text_shadow_white {
+  text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.712);
+
+}
+
+.box_shadow_dark {
+  -webkit-box-shadow: -3px -1px 15px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: -3px -1px 15px 2px rgba(0,0,0,0.3);
+  box-shadow: -3px -1px 15px 2px rgba(0,0,0,0.3);
+}
+
+
+.heading1 {
+@apply font-ogg1 text-[min(12vw,100px)]
+}
+
+.heading2 {
+@apply font-ogg2 text-[min(calc(0.75rem+2.5vw),44px)] 
+}
+
+.paragraph1 {
+@apply f_rale text-[min(calc(0.5rem+1vw),20px)]
+}
+
+.signature {
+  @apply f_rouge text-[min(calc(0.75rem+6vw),75px)]    accent1-t
+}
+
+.tb {
+  @apply border border-black
+}
+
+/* //////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////// */
+/* backgorunds */
+
+.glass_bg {
+  background: #a58964af;
+  /* border-radius: 16px; */
+  /* box-shadow: 0 4px 30px rgba(255, 0, 0, 0.1); */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid #a589648a;
+}
+
+#hero_bg {
+  background-color: rgb(245, 235, 255);
+  background-blend-mode:overlay;
 }

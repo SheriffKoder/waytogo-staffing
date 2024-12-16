@@ -25,7 +25,7 @@ module.exports = {
       'vp3': '570px',
       // => @media (min-width: 768px) { ... }
 
-      'vp4': '850px',
+      'vp4': '700px',
       
       'vp5': '1024px',
       // => @media (min-width: 1024px) { ... }
@@ -42,7 +42,9 @@ module.exports = {
     // colors,
     extend: {
       fontFamily: {
-        pier: ['var(--font-pier)']
+        ogg1: ['var(--font-ogg-reg)'],
+        ogg2: ['var(--font-ogg-med)']
+
       }
     },
 

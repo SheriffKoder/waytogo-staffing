@@ -3,15 +3,25 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import localFont from 'next/font/local'
+import Navbar from "@/components/Navbar";
+import ScrollContext from "@/components/BaseEffects/SmoothScrollContext"
 
-
-const pier = localFont({
+const OggRegular = localFont({
   src: [
     {
-      path: './fonts/PiersonDemo.woff',
+      path: './fonts/Ogg-Regular-BF646c18fc465e5.ttf',
     },
   ],
-  variable: '--font-pier'
+  variable: '--font-ogg-reg'
+})
+
+const OggMed = localFont({
+  src: [
+    {
+      path: './fonts/Ogg-Medium-BF646c18fc45bd0.ttf',
+    },
+  ],
+  variable: '--font-ogg-med'
 })
 
 
@@ -28,9 +38,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${pier.variable}`}
+      <body className={`${OggRegular.variable} ${OggMed.variable}`}
       >
+
+       <Navbar/>
+        <ScrollContext>
         {children}
+        </ScrollContext>
+
       </body>
     </html>
   );
