@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.f_rale {
+  @apply font-['Raleway']
+}
+
+.f_rouge {
+  @apply font-['Rouge_Script']
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.flex-c-c {
+  @apply flex flex-col items-center justify-center
+}
+
+.accent1-t {
+ @apply text-[#A58964]
+}
+
+.accent1-bg {
+  @apply bg-[#A58964]
+}
+
+.accent2-t {
+  @apply text-[#102226]
+ }
+
+ .accent2-bg {
+  @apply bg-[#102226]
+}
