@@ -1,28 +1,52 @@
+"use client"
 import React from 'react'
+import { nav_links } from '@/constants'
+import Link from 'next/link'
+import Image from 'next/image'
+
+import { useGSAP } from "@gsap/react";
+import gsap from 'gsap'
+import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
 
 const Navbar = () => {
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    
+  useGSAP(()=> {
+
+    let navLinks = gsap.utils.toArray(".navLinks");
+
+    // move the links up on page entry
+    gsap.to(navLinks, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power2.out",
+    })
+
+
+  },[]);
+
   return (
-    <nav className="w-full fixed z-[99] overflow-hidden">
+    <nav className='w-full h-auto py-[1rem] px-[2rem] bg-[#fffffff1]
+    fixed top-0 z-[99]'>
 
-    <ul className="glass_bg vp4:rounded-full h-[120px] 
-    relative top-[-80px] vp4:w-[80%] w-[full] mx-auto">
-      <ul className='w-full flex flex-row gap-12 relative bottom-[-85px]
-      items-center justify-center z-[1] left-0'>
-      <li className="text-white">
-          Contact
-        </li>
+    <Image src="/images/logo.avif" alt="company logo 1" 
+    className='absolute left-[2rem] top-[1rem] my-auto' width={75} height={50}></Image>
 
-        <li className="text-white">
-          Blog
-        </li>
-
-        <li className="text-white">
-          Jobs
-        </li>
-
-      </ul>
-      
-
+      <ul className='w-full flex flex-row gap-[4rem] paragraph1 justify-center'>
+        {
+          nav_links.map((link, index)=> (
+            <Link href={link.href} aria-label={link.aria} key={"nav link"+link.text}
+            className={`hover:text-[#A58964] trans1 navLinks opacity-0
+            
+            `}
+            // according to index, initialy set the position of the links below
+            style={{transform: `translateY(${4*(index+5)}px)`}}>
+              {link.text}
+            </Link>
+          ))
+        }
       </ul>
     </nav>
   )
