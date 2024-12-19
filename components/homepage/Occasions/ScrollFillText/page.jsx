@@ -140,11 +140,10 @@ const ScrollFillText = () => {
               
     
     },[]);
+        {/* https://codepen.io/Juxtopposed/pen/mdQaNbG */}
 
     return (
-        <>
-        {/* https://codepen.io/Juxtopposed/pen/mdQaNbG */}
-        <h3 className="w-[100%] mx-auto vp4:px-[4rem] max-w-[1400px]
+        <h3 className="scrollFillText w-[100%] mx-auto vp4:px-[4rem] max-w-[1400px] bg-white
         text-[4vw] font-ogg2 vp3:text-[min(45px,3.5vw)] vp7:text-[min(60px,3.7vw)]">
             <div className="vp3:pl-[1rem] textFill_text ">From elegant weddings to corporate events,</div>
             <div className="vp3:pl-[1rem] textFill_text ">private dinners, or large celebrations,</div>
@@ -155,7 +154,6 @@ const ScrollFillText = () => {
 
         </h3>
 
-        </>
     )
 
 }

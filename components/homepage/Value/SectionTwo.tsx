@@ -84,8 +84,8 @@ const SectionTwo = () => {
   },[]);
 
   return (
-    <div className='w-full h-[100vh] vp4:min-h-[90vh] flex flex-col max-w-[1400px] mx-auto
-    px-[1rem] vp4:px-[2rem] mt-[8rem] vp4:mt-[15rem]' id="section2Container">
+    <div className='w-full h-[80vh] vp4:min-h-[90vh] flex flex-col max-w-[1400px] mx-auto
+    px-[1rem] vp4:px-[2rem] mt-[6rem] vp4:mt-[12rem] vp5:mt-[16rem]' id="section2Container">
 
       <h2 className="flex flex-row gap-4 heading1 items-center text-center flex-wrap leading-[calc(6vw+1rem)] mb-[2rem] pr-[2rem] vp2:pr-[30vw] vp4:pr-[30vw] vp4:px-[2rem] vp6:pr-0">
         {allText.section2.header.split(" ").map((word,index)=> (
@@ -119,7 +119,7 @@ const SectionTwo = () => {
           <div className=' tilt-inner-element2 text-white 
           heading2 flex-col'>
 
-            <h3 className='mt-[-1rem]'>
+            <h3 className='mt-[-1rem] text_shadow_1'>
               {section2_cards.card1.header}
             </h3>
 

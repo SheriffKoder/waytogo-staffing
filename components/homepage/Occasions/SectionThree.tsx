@@ -39,13 +39,14 @@ const SectionThree = () => {
 
 
   return (
-    <div className='w-full h-full px-[1rem]' id="section3Container">
+    <div className='w-full h-full px-[0rem] pt-[5rem] relative' id="section3Container">
 
-    <h2 className="vp4:px-[4rem] flex flex-row gap-4 heading1 items-center max-w-[1400px] mx-auto mb-[3rem]
-    vp4:mb-0">
+    <h2 className="px-[2rem] sticky z-[-1] bg-black text-white top-[6rem] vp4:px-[4rem] flex flex-row gap-4 heading1 items-center max-w-[1400px] mx-auto mb-[3rem]
+    vp4:mb-0 sectionThreeHeading_container"
+    style={{mixBlendMode: "difference"}}>
         {allText.section3.header.split(" ").map((word,index)=> (
           <div key={index}
-          className={`${index===1 ? 'heading1_signature mt-[-15px] ml-1' : ''}`}>
+          className={`${index===1 ? 'heading1_signature2 mt-[-15px] ml-1' : ''}`}>
             <div className='section3Heading translate-y-[20px] opacity-0 '>
               {word}
             </div>
@@ -55,7 +56,7 @@ const SectionThree = () => {
 
       <ScrollFillText/>
 
-      <div className='w-full'>
+      <div className='w-full px-[0.5rem]'>
         <ScrollStackCards/>
       </div>
     </div>

@@ -30,6 +30,21 @@ const ScrollStackCards = () => {
       });
 
 
+      gsap.to(".sectionThreeHeading_container", {
+        // y:0,
+        opacity: 1,
+        zIndex: 1,
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".scrollFillText",
+            start: "105% 20%", // the default values
+            end: "110% 20%",
+            scrub: true,
+            // markers: true,
+        }, 
+        });
+
+
   },[]);
 
 
@@ -54,14 +69,14 @@ const ScrollStackCards = () => {
               </Image>
   
               <div className='absolute w-full h-full flex flex-col bg-[#00000060]
-              text-white p-[2rem]'
+              text-white px-[5rem] pt-[calc(2rem+100px)]'
               style={{
                 background: "#00000060",
                 background: "linear-gradient(160deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 51%, rgba(255,255,255,0) 100%)"
               }}>
-                <h3 className='heading1'>
+                <h3 className='heading2'>
                   <span className='text-sm vp4:text-xl mr-[0.5rem]'>{index+1}</span>{card.header}</h3>
-                <p className='paragraph1'>{card.description}</p>
+                <p className='paragraph1 max-w-[900px]'>{card.description}</p>
               </div>
   
             </div>

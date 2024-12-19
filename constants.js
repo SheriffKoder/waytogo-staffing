@@ -50,48 +50,50 @@ const nav_links = [
     // { text: "Measures", href: "#measures", aria: "our achievements"},
     { text: "Events", href: "#events", aria: "Events we are experienced in" },
     { text: "Services", href: "#services", aria: "Services we offer" },
+    { text: "Careers", href: "/", aria: "Work with us" },
+
   ]
 
 const sectionThree_cards = [
     {
         header: "Country Clubs",
         description: "We prioritize making your members feel valued ensuring flawless execution of weddings, mitzvahs, anniversaries, and other important events.",
-        image: "https://media.istockphoto.com/id/1268392517/photo/restaurant-manager-and-his-staff-in-terrace-interacting-to-head-chef-in-restaurant.jpg?s=1024x1024&w=is&k=20&c=EZx4lUITmVsdUHshy5cTP8YirbW_F2bY880XGObz_n8=",
+        image: "/sectionThreeImages/1.jpg",
     },
     {
         header: "Hotels",
         description: "Reliable and professional team members to enhance your guest experiences, from housekeeping to front desk.",
-        image: "https://media.istockphoto.com/id/151812102/photo/portrait-of-smiling-restaurant-employees.jpg?s=612x612&w=0&k=20&c=uXheUcdEHqu8dNBHl-51gc-yBRH9cLCvVt2DU-AjA0g="
+        image: "/sectionThreeImages/2.jpg"
     },
     {
         header: "Universities",
         description: "Flexible staffing solutions for campus events, dining halls, and administrative support.",
-        image: "https://media.istockphoto.com/id/1268392517/photo/restaurant-manager-and-his-staff-in-terrace-interacting-to-head-chef-in-restaurant.jpg?s=1024x1024&w=is&k=20&c=EZx4lUITmVsdUHshy5cTP8YirbW_F2bY880XGObz_n8=",
+        image: "/sectionThreeImages/3.jpg",
     },
     {
         header: "Corporate Events",
-        image: "https://media.istockphoto.com/id/1198944463/photo/i-hope-youll-like-you-coffee.jpg?s=2048x2048&w=is&k=20&c=mMHzgmMTB9p2ibc68QNRepFevJnN_LHWUyMTf8et3Uc=",
+        image: "h/sectionThreeImages/4.jpg",
         description: "Skilled personnel to deliver seamless service for meetings, conferences, and private gatherings."
     },
     {
         header: "Banquet Halls",
         description: "Dedicated team members to provide flawless service for weddings, parties, and special events.",
-        image: "https://media.istockphoto.com/id/151812102/photo/portrait-of-smiling-restaurant-employees.jpg?s=612x612&w=0&k=20&c=uXheUcdEHqu8dNBHl-51gc-yBRH9cLCvVt2DU-AjA0g="
+        image: "/sectionThreeImages/5.jpg"
     },
     {
         header: "Stadiums",
         description: "Versatile staff for concession stands, VIP sections, and event operations to keep fans happy and events running smoothly.",
-        image: "https://media.istockphoto.com/id/151812102/photo/portrait-of-smiling-restaurant-employees.jpg?s=612x612&w=0&k=20&c=uXheUcdEHqu8dNBHl-51gc-yBRH9cLCvVt2DU-AjA0g="
+        image: "/sectionThreeImages/6.jpg"
     },
     {
         header: "Catering Companies",
         description: "Professional and efficient staff to assist with meal prep, service, and cleanup for events of any scale.",
-        image: "https://media.istockphoto.com/id/1198944463/photo/i-hope-youll-like-you-coffee.jpg?s=2048x2048&w=is&k=20&c=mMHzgmMTB9p2ibc68QNRepFevJnN_LHWUyMTf8et3Uc=",
+        image: "/sectionThreeImages/7.jpg"
     },
     {
         header: "Cruise Lines",
         description: "Dedicated hospitality teams ready to deliver premium service on and off the water.",
-        image: "https://media.istockphoto.com/id/151812102/photo/portrait-of-smiling-restaurant-employees.jpg?s=612x612&w=0&k=20&c=uXheUcdEHqu8dNBHl-51gc-yBRH9cLCvVt2DU-AjA0g="
+        image: "/sectionThreeImages/8.jpg"
     },
 
 ]
@@ -136,90 +138,90 @@ const sectionFive_cards = [
     {
         header: "Banquet Server",
         paragraph: "Friendly and professional servers skilled in delivering exceptional dining experiences for weddings, corporate events, and private gatherings.",
-        image: "/sectionThreeImages/1.jpg"
+        image: "/sectionFiveImages/1.jpg"
 
     },
     {
         header: "Kitchen Helper",
         paragraph: "Dependable staff to assist with meal preparation, cleaning, and maintaining an organized kitchen during busy periods.",
-        image: "/sectionThreeImages/2.jpg"
+        image: "/sectionFiveImages/2.jpg"
 
     },
 
     {
         header: "Banquet Captain",
         paragraph: "Experienced leaders who oversee banquet operations, ensuring flawless service and coordination of staff during events.",
-        image: "/sectionThreeImages/1.jpg"
+        image: "/sectionFiveImages/3.jpg"
 
     },
 
     {
         header: "Maitre D'",
         paragraph: "Seasoned front-of-house managers to greet guests, manage seating arrangements, and supervise the overall dining experience.",
-        image: "/sectionThreeImages/2.jpg"
+        image: "/sectionFiveImages/4.jpg"
 
     },
 
     {
         header: "Concession Stand Worker",
         paragraph: "Reliable team members adept at serving food, drinks, and handling transactions at stadiums, fairs, and other event venues.",
-        image: "/sectionThreeImages/1.jpg"
+        image: "/sectionFiveImages/5.jpg"
 
     },
 
     {
         header: "Line Cook",
         paragraph: "Skilled culinary professionals who can execute dishes efficiently, ensuring high-quality food service in kitchens of all sizes.",
-        image: "/sectionThreeImages/2.jpg"
+        image: "/sectionFiveImages/6.jpg"
 
     },
 
     {
         header: "Dishwasher",
         paragraph: "Hardworking individuals responsible for maintaining clean kitchen equipment and ensuring smooth kitchen operations.",
-        image: "/sectionThreeImages/1.jpg"
+        image: "/sectionFiveImages/7.jpg"
 
     },
 
     {
         header: "Housekeeper",
         paragraph: "Meticulous staff focused on maintaining cleanliness and tidiness for hotels, resorts, and other establishments.",
-        image: "/sectionThreeImages/2.jpg"
+        image: "/sectionFiveImages/8.jpg"
 
     },
 
     {
         header: "Event Setup Crew",
         paragraph: "Detail-oriented staff skilled in setting up event spaces, including furniture arrangement, decorations, and technical equipment.",
-        image: "/sectionThreeImages/1.jpg"
+        image: "/sectionFiveImages/9.jpg"
 
     },
 
     {
         header: "Guest Service Representative",
         paragraph: "Polished customer-facing professionals offering exceptional service at front desks, events, and receptions.",
-        image: "/sectionThreeImages/2.jpg"
+        image: "/sectionFiveImages/10.jpg"
 
     },
 
     {
         header: "Event Security Staff",
         paragraph: "Responsible individuals who maintain order, safety, and guest satisfaction during events of any size.",
-        image: "/sectionThreeImages/1.jpg"
+        image: "/sectionFiveImages/11.jpg"
 
     },
 
     {
         header: "Event Manager",
         paragraph: "Experienced professionals to plan, oversee, and execute events, ensuring everything runs smoothly and meets expectations.",
-        image: "/sectionThreeImages/2.jpg"
+        image: "/sectionFiveImages/12.jpg"
 
     },
 
     {
         header: "General Laborer",
         paragraph: "Versatile staff who can assist with a wide range of tasks, including loading/unloading, venue setups, and logistics.",
-        image: "/sectionThreeImages/1.jpg"
+        image: "/sectionFiveImages/13.jpg"
     },
 ]
 

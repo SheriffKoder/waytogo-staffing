@@ -10,18 +10,18 @@ import { sectionFive_cards } from '@/constants';
 
 function CarouselGames() {
     return (
-        <div className="CarouselContainer translate-y-[50px] opacity-0">
+        <div className="CarouselContainer translate-y-[50px] opacity-0 relative">
             <div className="">
                 <Splide
                     options={{
                         type: "loop", // Loop back to the beginning when reaching the end
                         autoScroll: {
-                            pauseOnHover: false, // Do not pause scrolling when hovering over the carousel
+                            pauseOnHover: true, // Do not pause scrolling when hovering over the carousel
                             pauseOnFocus: false, // Do not pause scrolling when the carousel is focused
                             rewind: true, // Rewind to start when the end is reached
                             speed: 0.4 // Scrolling speed
                         },
-                        arrows: false, // Hide navigation arrows
+                        arrows: true, // Hide navigation arrows
                         pagination: false, // Hide pagination dots
                         gap: '12px', // Gap between slides
                         // wheel: true,
@@ -44,14 +44,17 @@ function CarouselGames() {
                         className='
                         w-[40vw] h-[50vh] rounded-[10px] p-[1rem]
                         hover:w-[min(550px,45vw)] hover:h-[50vh]
-                        vp4:w-[min(500px,40vw)] vp4:h-[min(600px,50vw)]
-                        vp4:hover:w-[min(550px,42vw)] vp4:hover:h-[min(600px,50vw)]
+                        vp4:w-[min(500px,40vw)] vp4:h-[min(600px,55vw)] vp5:h-[min(600px,45vw)] vp6:h-[min(600px,37vw)]
+                        vp4:hover:w-[min(550px,42vw)] vp4:hover:h-[min(600px,37vw)] vp5:hover:h-[min(600px,45vw)] vp6:hover:h-[min(600px,37vw)]
                         transition-all duration-500 ease-out border
                          
                         splideCard text-white'
                         style={{
                             background: "#00000060",
-                            background: `linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 21%, rgba(255,255,255,0) 100%), url(${card.image})`
+                            background: `linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 21%, rgba(255,255,255,0) 100%), url(${card.image})`,
+                            backgroundPosition: "cover",
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover",
                           }}
                         >
 
@@ -59,7 +62,7 @@ function CarouselGames() {
                             flex flex-col items-start justify-end h-full">
                                 <h3 className='heading2 splideTitle w-[30vw] max-w-[400px]
                                 transition-all duration-500 ease-out'>
-                                    <span className='text-sm vp4:text-xl mr-[0.5rem]'>{sectionFive_cards.length-(index)}</span>
+                                    <span className='text-sm vp4:text-xl mr-[0.5rem]'>{index+1}</span>
                                     {card.header}
                                 </h3>
 
@@ -79,6 +82,22 @@ function CarouselGames() {
 
                 </Splide>
             </div>
+
+            <div className='absolute w-[50px] aspect-square rounded-full accent2-bg bottom-[-2rem]
+            left-[50%] swipe_rotate'>
+                <div className='w-full h-full invert'
+                style={{
+                    backgroundImage: 'url("/images/swipe.png")',
+                    backgroundSize: "80%",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    // transform: "translateX(50%)",
+                    }}>
+                </div>
+            </div>
+
+           
+
         </div>
     );
 }

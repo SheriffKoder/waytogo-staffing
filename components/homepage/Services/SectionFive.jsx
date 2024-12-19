@@ -65,7 +65,8 @@ const SectionFive = () => {
   return (
     <div id="section5Container">
 
-      <div className='px-[1rem] vp4:px-[4rem]'>
+      <div className='px-[1rem] vp4:px-[4rem] mt-[5rem]'>
+       
         <h2 className="flex flex-row gap-4 heading1 items-center flex-wrap">
           {allText.section5.header.split(" ").map((word,index)=> (
             <div key={index}
@@ -75,10 +76,11 @@ const SectionFive = () => {
           ))}
         </h2>
 
-        <p className='paragraph1 mb-[0.5rem] section5Para translate-y-[20px] opacity-0'>{allText.section5.paragraph}</p>
+        <p className='paragraph1 mb-[0.5rem] vp4:mb-[2rem] section5Para translate-y-[20px] opacity-0'>{allText.section5.paragraph}</p>
       </div>
 
       <CarouselGames/>
+      
       
     </div>
   )

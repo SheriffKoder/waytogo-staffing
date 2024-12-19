@@ -54,7 +54,7 @@ const SectionFour = () => {
         // y:0,
         opacity: 1,
         duration: 1,
-        delay: i/3,
+        delay: i/8,
         scrollTrigger: {
                 trigger: "#section4Container",
                 start: "50% bottom", // the default values
@@ -67,11 +67,11 @@ const SectionFour = () => {
       var line = content.querySelector(".bottomLine");
 
       gsap.to(line, {
-        width: "100%",
+        // width: "100%",
         // opacity: 1,
-        duration: 3,
-        delay: i/2,
-        opacity: 0.2,
+        duration: 1,
+        delay: i/7,
+        opacity: 0.05,
         scrollTrigger: {
                 trigger: "#section4Container",
                 start: "50% bottom", // the default values
@@ -86,7 +86,7 @@ const SectionFour = () => {
         x:0,
         opacity: 1,
         duration: 1,
-        delay: i/2,
+        delay: i/7,
         scrollTrigger: {
                 trigger: "#section4Container",
                 start: "50% bottom", // the default values
@@ -100,8 +100,8 @@ const SectionFour = () => {
       gsap.to(content, {
         x:0,
         opacity: 1,
-        duration: 1.5,
-        delay: (i/2)+0.25,
+        duration: 1.1,
+        delay: (i/7)+0.1,
         scrollTrigger: {
                 trigger: "#section4Container",
                 start: "50% bottom", // the default values
@@ -160,7 +160,7 @@ const SectionFour = () => {
                 </div>
 
                 <div className='w-full h-full flex flex-col vp9:flex-row vp4:gap-2 relative'>
-                    <div className='w-0 h-[1px] bg-[#252525] absolute bottom-0 bottomLine opacity-[0.6]'/>
+                    <div className='w-full h-[1px] bg-[#252525] absolute bottom-0 bottomLine opacity-[0]'/>
                     <h3 className='heading2 min-w-[30%] vp9:mt-auto title translate-x-[-20px] opacity-0'>{content.header}</h3>
                     <p className='paragraph1 vp9:mt-auto vp9:mb-[10px] content translate-x-[-20px] opacity-0'>{content.paragraph}</p>
                 </div>

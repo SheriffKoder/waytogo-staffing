@@ -49,7 +49,7 @@ export default function RootLayout({
         {children}
         </ScrollContext>
 
-      <footer>
+      <footer className="h-[400px] relative flex-c-c">
         <Footer/>
       </footer>
 

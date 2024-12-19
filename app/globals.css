@@ -48,6 +48,11 @@ body {
  @apply text-[#A58964]
 }
 
+.accent1-t-inv {
+  @apply text-[#627da2]
+ }
+ 
+
 .accent1-bg {
   @apply bg-[#A58964]
 }
@@ -70,11 +75,15 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 .accent2-t {
-  @apply text-[#28465e]
+  @apply text-[#191e3e]
  }
 
  .accent2-bg {
-  @apply bg-[#102226]
+  @apply bg-[#191e3e]
+}
+
+.accent2-br {
+  @apply border-2 border-[#191e3e] accent2-t
 }
 
 .text_shadow_white {
@@ -83,6 +92,10 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 .text_shadow_2 {
   text-shadow: 0px 0px 8px rgba(0,0,0,0.4);
+}
+
+.text_shadow_1 {
+  text-shadow: 0px 0px 8px rgba(0,0,0,0.3);
 }
 
 .box_shadow_dark {
@@ -121,6 +134,11 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 .heading1_signature {
   @apply f_rouge text-[min(4.5rem+6vw,150px)] accent1-t leading-[0px]
 }
+
+.heading1_signature2 {
+  @apply f_rouge text-[min(4.5rem+6vw,150px)] accent1-t-inv leading-[0px]
+}
+
 
 
 .tb {
@@ -178,6 +196,7 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 .StackContainer {
 	width: 100%;
 	margin: 0 auto;
+
 }
 
 #cards {
@@ -187,8 +206,8 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(var(--cards), var(--cardHeight));
 	gap: var(--cardMargin);
-	padding-bottom: calc(var(--cards) * var(--cardTopPadding));
-	margin-bottom: var(--cardMargin);
+	/* padding-bottom: calc(var(--cards) * var(--cardTopPadding)); */
+	/* margin-bottom: var(--cardMargin); */
 }
 
 #card1 {
@@ -229,6 +248,7 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 	top: 0;
 	padding-top: calc(var(--index) * var(--cardTopPadding));
   margin: 0 ;
+  
 }
 
 .card img {
@@ -319,6 +339,19 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 
+.splide {
+  padding: 0;
+}
+
+button.splide__arrow {
+  background-color: white;
+  opacity: 1;
+}
+
+button.splide__arrow svg {
+  fill: 191e3e;
+}
+
 /* ///////////////////////////////////////////////////////////////////////// */
 /* sliding cards */
 
@@ -403,3 +436,29 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
   }
 }
 
+
+
+.swipe_rotate {
+  animation-duration: 7s;
+  animation-name: rotateBack;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+@keyframes rotateBack {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  15%{
+    transform: rotate(30deg);
+  }
+  30% { 
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+
+  }
+}
