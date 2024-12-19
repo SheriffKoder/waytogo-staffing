@@ -40,7 +40,7 @@ const SectionFour = () => {
           trigger: "#section4Container",
           start: "20% bottom", // the default values
           end: "bottom top",
-          markers: true,
+          // markers: true,
       }, 
       });
 

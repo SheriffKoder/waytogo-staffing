@@ -59,7 +59,7 @@ function CarouselGames() {
                             flex flex-col items-start justify-end h-full">
                                 <h3 className='heading2 splideTitle w-[30vw] max-w-[400px]
                                 transition-all duration-500 ease-out'>
-                                    <span className='text-sm vp4:text-xl mr-[0.5rem]'>{index+1}</span>
+                                    <span className='text-sm vp4:text-xl mr-[0.5rem]'>{sectionFive_cards.length-(index)}</span>
                                     {card.header}
                                 </h3>
 
