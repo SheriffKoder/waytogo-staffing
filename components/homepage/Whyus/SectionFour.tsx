@@ -34,12 +34,13 @@ const SectionFour = () => {
       y:0,
       opacity: 1,
       duration: 1,
+      delay: 0.5,
       stagger: 0,
       scrollTrigger: {
           trigger: "#section4Container",
-          start: "top bottom", // the default values
+          start: "20% bottom", // the default values
           end: "bottom top",
-          // markers: true,
+          markers: true,
       }, 
       });
 
@@ -68,8 +69,8 @@ const SectionFour = () => {
       gsap.to(line, {
         width: "100%",
         // opacity: 1,
-        duration: 4,
-        delay: i/1.5,
+        duration: 3,
+        delay: i/2,
         opacity: 0.2,
         scrollTrigger: {
                 trigger: "#section4Container",
@@ -151,7 +152,7 @@ const SectionFour = () => {
         {
             sectionFour_contents.map((content, index)=> (
 
-            <div className='section4Content w-[80vw] mx-auto h-[8rem] flex flex-row max-w-[1100px]' key={index}>
+            <div className='section4Content w-[80vw] mx-auto h-[8rem] vp5:h-[10rem] flex flex-row max-w-[1100px]' key={index}>
 
                 <div className='heading2 mb-auto
                 w-[10%] text-center vp9:mt-auto vp9:mb-0 contentIndex opacity-0'>

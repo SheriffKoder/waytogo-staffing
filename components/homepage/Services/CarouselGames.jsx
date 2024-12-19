@@ -38,7 +38,7 @@ function CarouselGames() {
 {/* w-[min(500px,40vw)] h-[min(600px,50vw)] rounded-[10px] */}
                         {/* hover:w-[min(550px,42vw)] hover:h-[min(600px,50vw)] */}
                 {
-                    sectionFive_cards.map((card)=>(
+                    sectionFive_cards.map((card,index)=>(
                         <SplideSlide key={card.header}>
                         <div 
                         className='
@@ -59,6 +59,7 @@ function CarouselGames() {
                             flex flex-col items-start justify-end h-full">
                                 <h3 className='heading2 splideTitle w-[30vw] max-w-[400px]
                                 transition-all duration-500 ease-out'>
+                                    <span className='text-sm vp4:text-xl mr-[0.5rem]'>{index+1}</span>
                                     {card.header}
                                 </h3>
 
