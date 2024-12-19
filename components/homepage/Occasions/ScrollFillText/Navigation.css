@@ -6,7 +6,7 @@
 }
 
 .textFill_text {
-    font-size: 3.5vw;
+    /* font-size: min(4.4vw,50px); */
     /* letter-spacing: -0.01em; */
     line-height: 200%;
     margin: 0;
@@ -62,5 +62,3 @@
 .textFill_text:hover > span {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
-
-

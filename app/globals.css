@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+@import '@splidejs/splide/css/sea-green';
 
 @tailwind base;
 @tailwind components;
@@ -65,7 +66,7 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 .accent1-light-bg {
-  @apply bg-[#eeeae2]
+  @apply bg-[#fffdfa]
 }
 
 .accent2-t {
@@ -85,9 +86,9 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 .box_shadow_dark {
-  -webkit-box-shadow: -3px -1px 15px 2px rgba(0,0,0,0.3);
-  -moz-box-shadow: -3px -1px 15px 2px rgba(0,0,0,0.3);
-  box-shadow: -3px -1px 15px 2px rgba(0,0,0,0.3);
+  -webkit-box-shadow: -3px -1px 15px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: -3px -1px 15px 2px rgba(0,0,0,0.1);
+  box-shadow: -3px -1px 15px 2px rgba(0,0,0,0.1);
 }
 
 .box_shadow_dark_main {
@@ -144,19 +145,31 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 #hero_bg {
-  background-color: rgb(245, 235, 255);
-  background-blend-mode:overlay;
+  background-color: #c4bbad;
+  background-blend-mode:screen;
+}
+
+.tilt-parallax-effect {
+  transform-style: preserve-3d;
+  
+
+}
+
+.tilt-inner-element {
+  transform: translateZ(60px);
+}
+
+.tilt-inner-element2 {
+  transform: translateZ(120px);
 }
 
 
 
 
-
-
 /* ///////////////////////////////////////////////////////////////////////// */
-
+/* stacked cards - occassions */
 :root {
-	--cards: 6;
+	--cards: 8;
 	--cardHeight: 92vh;
 	--cardTopPadding: 5em;
 	--cardMargin: 4vw;
@@ -200,6 +213,14 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 #card6 {
 	--index: 1.5;
+  --mx: 0px
+}
+#card7 {
+	--index: 1.6;
+  --mx: 0px
+}
+#card8 {
+	--index: 1.7;
   --mx: 0px
 }
 
@@ -250,3 +271,135 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 * {
   @apply tb
 } */
+
+
+/* .is-active img {
+  filter: brightness(0);
+}
+
+.is-next img {
+  filter: brightness(1);
+} */
+
+/* ///////////////////////////////////////////////////////////////////////// */
+/* carousel - our services */
+.splideCard .splideContent {
+  opacity: 0;
+  /* transform: translateY(20px); */
+  /* position: absolute; */
+  height: 0px;
+}
+
+.splideCard:hover  .splideContent{
+  /* display: block; */
+  opacity: 1;
+  /* position: relative; */
+  height: 150px;
+  /* transform: translateY(0px); */
+}
+
+/* .splideCard .splideTitle {
+  transform: translateY(20px);
+}
+
+.splideCard:hover  .splideTitle{
+  transform: translateY(0px);
+} */
+
+
+.splideCard {
+  filter: brightness(1);
+
+}
+
+.splideCard:hover{
+  filter: brightness(1.15);
+  /* transform: translateY(-100px); */
+  
+}
+
+
+/* ///////////////////////////////////////////////////////////////////////// */
+/* sliding cards */
+
+.gallery {
+  --d: 10s; /* duration */
+  display: grid;
+  width: 250px;
+}
+
+.gallery > img {
+  grid-area: 1/1;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 10px solid #f2f2f2;
+  box-shadow: 0 0 4px #0007;
+  z-index: 2;
+  animation: 
+    slide var(--d) infinite,
+    z-order var(--d) infinite steps(1);
+    border-radius: 15px;
+}
+
+.gallery img:last-child {
+  animation-name: slide, z-order-last;
+}
+
+/* Manually expanded rules for $n = 5 */
+.gallery > img:nth-child(1) {
+  animation-delay: calc((1 - 1) / 5 * var(--d));
+  --r: -20deg;
+}
+
+.gallery > img:nth-child(2) {
+  animation-delay: calc((1 - 2) / 5 * var(--d));
+  --r: 10deg;
+}
+
+.gallery > img:nth-child(3) {
+  animation-delay: calc((1 - 3) / 5 * var(--d));
+  --r: -5deg;
+}
+
+.gallery > img:nth-child(4) {
+  animation-delay: calc((1 - 4) / 5 * var(--d));
+  --r: 15deg;
+}
+
+.gallery > img:nth-child(5) {
+  animation-delay: calc((1 - 5) / 5 * var(--d));
+  --r: -10deg;
+}
+
+@keyframes slide {
+  10% {
+    transform: translateX(120%) rotate(var(--r));
+  }
+  0%,
+  100%,
+  20% {
+    transform: translateX(0%) rotate(var(--r));
+  }
+}
+
+@keyframes z-order {
+  10%,
+  20% {
+    z-index: 1;
+  }
+  80% {
+    z-index: 2;
+  }
+}
+
+@keyframes z-order-last {
+  10%,
+  20% {
+    z-index: 1;
+  }
+  70% {
+    z-index: 2;
+  }
+}
+

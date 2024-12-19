@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
 import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
 
+import Tilt from 'react-parallax-tilt';
 
 
 const page = () => {

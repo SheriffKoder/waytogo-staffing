@@ -5,6 +5,7 @@ import "./globals.css";
 import localFont from 'next/font/local'
 import Navbar from "@/components/Navbar";
 import ScrollContext from "@/components/BaseEffects/SmoothScrollContext"
+import Footer from "@/components/Footer";
 
 const OggRegular = localFont({
   src: [
@@ -41,10 +42,16 @@ export default function RootLayout({
       <body className={`${OggRegular.variable} ${OggMed.variable}`}
       >
 
-       <Navbar/>
+      <header>
+        <Navbar/>
+      </header>
         <ScrollContext>
         {children}
         </ScrollContext>
+
+      <footer>
+        <Footer/>
+      </footer>
 
       </body>
     </html>

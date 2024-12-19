@@ -16,8 +16,8 @@ const SectionFour = () => {
       gsap.to(heading, {
         y:0,
         opacity: 1,
-        duration: 0.5,
-        delay: i/3,
+        duration: 1,
+        delay: 0,
         scrollTrigger: {
                 trigger: "#section4Container",
                 start: "20% bottom", // the default values
@@ -33,8 +33,8 @@ const SectionFour = () => {
     gsap.to(section4Para, {
       y:0,
       opacity: 1,
-      duration: 0.5,
-      stagger: 0.25,
+      duration: 1,
+      stagger: 0,
       scrollTrigger: {
           trigger: "#section4Container",
           start: "top bottom", // the default values
@@ -68,8 +68,8 @@ const SectionFour = () => {
       gsap.to(line, {
         width: "100%",
         // opacity: 1,
-        duration: 0.5,
-        delay: i/3,
+        duration: 4,
+        delay: i/1.5,
         opacity: 0.2,
         scrollTrigger: {
                 trigger: "#section4Container",
@@ -84,7 +84,7 @@ const SectionFour = () => {
       gsap.to(title, {
         x:0,
         opacity: 1,
-        duration: 0.25,
+        duration: 1,
         delay: i/2,
         scrollTrigger: {
                 trigger: "#section4Container",
@@ -99,7 +99,7 @@ const SectionFour = () => {
       gsap.to(content, {
         x:0,
         opacity: 1,
-        duration: 0.25,
+        duration: 1.5,
         delay: (i/2)+0.25,
         scrollTrigger: {
                 trigger: "#section4Container",
@@ -133,7 +133,7 @@ const SectionFour = () => {
 
   return (
     <div className='px-[1rem] vp4:px-[2rem]' id="section4Container">
-        <h2 className="flex flex-row gap-4 heading1 items-center">
+        <h2 className="flex flex-row gap-4 heading1 items-center flex-wrap leading-[calc(6vw+1rem)] mb-[2rem]">
         {allText.section4.header.split(" ").map((word,index)=> (
           <div key={index}
           className={`${index===1 ? 'heading1_signature mt-[-15px] ml-1' : ''}`}>
@@ -154,14 +154,14 @@ const SectionFour = () => {
             <div className='section4Content w-[80vw] mx-auto h-[8rem] flex flex-row max-w-[1100px]' key={index}>
 
                 <div className='heading2 mb-auto
-                w-[10%] text-center vp4:mt-auto vp4:mb-0 contentIndex opacity-0'>
+                w-[10%] text-center vp9:mt-auto vp9:mb-0 contentIndex opacity-0'>
                     {index+1}
                 </div>
 
-                <div className='w-full h-full flex flex-col vp4:flex-row vp4:gap-2 relative'>
+                <div className='w-full h-full flex flex-col vp9:flex-row vp4:gap-2 relative'>
                     <div className='w-0 h-[1px] bg-[#252525] absolute bottom-0 bottomLine opacity-[0.6]'/>
-                    <h3 className='heading2 min-w-[30%] vp4:mt-auto title translate-x-[-50px] opacity-0'>{content.header}</h3>
-                    <p className='paragraph1 vp4:mt-auto vp4:mb-[10px] content translate-x-[-50px] opacity-0'>{content.paragraph}</p>
+                    <h3 className='heading2 min-w-[30%] vp9:mt-auto title translate-x-[-20px] opacity-0'>{content.header}</h3>
+                    <p className='paragraph1 vp9:mt-auto vp9:mb-[10px] content translate-x-[-20px] opacity-0'>{content.paragraph}</p>
                 </div>
 
         

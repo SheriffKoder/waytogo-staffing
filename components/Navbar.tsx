@@ -28,13 +28,13 @@ const Navbar = () => {
   },[]);
 
   return (
-    <nav className='w-full h-auto py-[1rem] px-[2rem] bg-[#fffffff1]
+    <nav className='w-full h-auto py-[1.5rem] px-[1rem] vp4:px-[2rem] bg-[#fffffff1]
     fixed top-0 z-[99]'>
 
     <Image src="/images/logo.avif" alt="company logo 1" 
-    className='absolute left-[2rem] top-[1rem] my-auto' width={75} height={50}></Image>
+    className='absolute left-[1rem] top-[1rem] my-auto' width={75} height={50}></Image>
 
-      <ul className='w-full flex flex-row gap-[4rem] paragraph1 justify-center'>
+      <ul className='w-full flex flex-row gap-[1rem] vp4:gap-[4rem] paragraph1 justify-end vp4:justify-center'>
         {
           nav_links.map((link, index)=> (
             <Link href={link.href} aria-label={link.aria} key={"nav link"+link.text}

@@ -4,6 +4,17 @@ const page = () => {
   return (
     <>
     <div className='flex-c-c min-h-[100vh] px-[2rem]'>
+
+      <div className="gallery">
+        <img src="https://picsum.photos/id/1004/400/400" alt="a lovely kiss in the night"/>
+        <img src="https://picsum.photos/id/1013/400/400" alt="a women inside a car"/>
+        <img src="https://picsum.photos/id/1066/400/400" alt="a baby"/>
+        <img src="https://picsum.photos/id/325/400/400" alt="a girl in the forest"/>
+        <img src="https://picsum.photos/id/65/400/400" alt="a girl"/>
+      </div>
+</div>
+
+    <div className='flex-c-c min-h-[100vh] px-[2rem]'>
         <h1 className='heading1 text-right'>{allText.hero.header}</h1>
         <p className="signature accent1-t text-right w-full">at your service</p>
 

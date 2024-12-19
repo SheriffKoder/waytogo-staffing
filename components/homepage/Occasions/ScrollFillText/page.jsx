@@ -144,11 +144,15 @@ const ScrollFillText = () => {
     return (
         <>
         {/* https://codepen.io/Juxtopposed/pen/mdQaNbG */}
-        <h3 className="w-[80%] mx-auto">
-            <div className="pl-[1rem] textFill_text heading2">We offer highly trained and professional staff<span>We offer highly trained and professional staff</span></div>
-            <div className="pl-[1rem] textFill_text heading2">ensuring top-quality service<span>ensuring top-quality service</span></div>
-            <div className="pl-[1rem] textFill_text heading2">and a seamless event experience<span>and a seamless event experience</span></div>
-            <div className="pl-[1rem] textFill_text heading2">for every occasion.<span>for every occasion</span></div>
+        <h3 className="w-[100%] mx-auto vp4:px-[4rem] max-w-[1400px]
+        text-[4vw] font-ogg2 vp3:text-[min(45px,3.5vw)] vp7:text-[min(60px,3.7vw)]">
+            <div className="vp3:pl-[1rem] textFill_text ">From elegant weddings to corporate events,</div>
+            <div className="vp3:pl-[1rem] textFill_text ">private dinners, or large celebrations,</div>
+            <div className="vp3:pl-[1rem] textFill_text ">our waitstaff adapts seamlessly to any setting.</div>
+            <div className="vp3:pl-[1rem] textFill_text ">Whether you need formal service or a casual touch,</div>
+            <div className="vp3:pl-[1rem] textFill_text ">we provide tailored staffing to match</div>
+            <div className="vp3:pl-[1rem] textFill_text ">your event's unique style and needs.</div>
+
         </h3>
 
         </>

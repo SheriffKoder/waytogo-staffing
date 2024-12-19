@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
 import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
 import Image from 'next/image';
+import Tilt from 'react-parallax-tilt';
 
 
 const SectionTwo = () => {
@@ -32,8 +33,8 @@ const SectionTwo = () => {
         gsap.to(section2Headings, {
           y:0,
           opacity: 1,
-          duration: 0.5,
-          stagger: 0.25,
+          duration: 1,
+          stagger: 0,
           scrollTrigger: {
               trigger: "#section2Container",
               start: "20% bottom", // the default values
@@ -83,10 +84,10 @@ const SectionTwo = () => {
   },[]);
 
   return (
-    <div className='w-full h-[70vh] vp4:min-h-[90vh] flex flex-col max-w-[1400px] mx-auto
-    px-[1rem] vp4:px-[2rem] mt-[8rem]' id="section2Container">
+    <div className='w-full h-[100vh] vp4:min-h-[90vh] flex flex-col max-w-[1400px] mx-auto
+    px-[1rem] vp4:px-[2rem] mt-[8rem] vp4:mt-[15rem]' id="section2Container">
 
-      <h2 className="flex flex-row gap-4 heading1 items-center">
+      <h2 className="flex flex-row gap-4 heading1 items-center text-center flex-wrap leading-[calc(6vw+1rem)] mb-[2rem] pr-[2rem] vp2:pr-[30vw] vp4:pr-[30vw] vp4:px-[2rem] vp6:pr-0">
         {allText.section2.header.split(" ").map((word,index)=> (
           <div key={index}
           className={`
@@ -96,63 +97,74 @@ const SectionTwo = () => {
         ))}
       </h2>
 
-      <p className='paragraph2 w-[70%] m-[2rem] mt-0 ml-[1rem] section2Para translate-y-[25px] opacity-0'>
-          <span className='font-bold'>The team - </span>{section2_cards.card2.about}
+      <p className='paragraph2 vp4:px-[2rem] w-[70%] m-[2rem] mt-0 ml-[1rem] section2Para translate-y-[25px] opacity-0'>
+          At Way to Go Staffing, we understand that your success starts with exceptional people. Our unwavering commitment to quality and reliability ensures that every placement strengthens your business. With over 
+          <span className='font-bold'> 8 years of staffing expertise</span>, we deliver a
+          <span className='font-bold'> 99% client satisfaction</span> rate and proudly 
+          <span className='font-bold'> serve over 100 hospitality businesses.</span> Trusted for our precision in matching the right talent to the right roles, we work efficiently to help you 
+          <span className='italic'> achieve your goals—every time.</span>
+
       </p>
 
-      <div className='cardsContainer mx-auto flex flex-row gap-[2rem] w-full relative
-      vp5:px-[2rem] '>
+      <div className='cardsContainer mx-auto flex flex-row vp5:gap-[2rem] w-full relative
+      vp5:px-[2rem]'>
 
+  
         {/* dark card */}
-        <div className='section2DarkCard opacity-0 translate-x-[-100px] mx-auto w-[min(calc(200px+20vw),400px)] 
-        h-[min(calc(200px+20vw),400px)] 
-        rounded-[10px]
-        hidden vp5:flex accent1-dark-bg-grad text-white box_shadow_dark_main
-        heading2 flex-col overflow-hidden p-[2rem]'>
+        <Tilt perspective={3000} className='accent1-dark-bg-grad tilt-parallax-effect box_shadow_dark_main
+        section2DarkCard opacity-0 translate-x-[-100px] rounded-[10px] hidden vp5:flex 
+        flex-col  w-[min(calc(200px+20vw),400px)] 
+          h-[min(calc(200px+20vw),400px)] mx-auto   p-[2rem]'>
 
-          <h3 className='mt-[-1rem]'>
-            {section2_cards.card1.header}
-          </h3>
+          <div className=' tilt-inner-element2 text-white 
+          heading2 flex-col'>
 
-          <p className='paragraph1'>
-           {section2_cards.card1.paragraph}
-          </p>
+            <h3 className='mt-[-1rem]'>
+              {section2_cards.card1.header}
+            </h3>
 
-          {/* google  */}
-          <div className='flex-1 flex flex-col px-[1rem]
-          accent1-light-bgg m-[1rem] rounded-[10px] items-center justify-center'>
-              
-              <div className='flex-c-c'>
-                <div className='w-[200px] h-[70px] relative'>
-                  <Image fill src="/images/google-white-logo.png" alt="google reviews logo"
-                  className='grayscale brightness-[2.5]'></Image>
-                </div>
-
-              </div>
-
-              <div className='w-[200px] h-[40px] mt-[0.5rem] flex-c-c relative'>
-              <Image fill src="/images/stars.png" alt="google reviews logo"
-                  className='grayscale brightness-[2.5]'></Image>
-              </div>
-
-              <p className='text-sm opacity-80 font-light font-sans'>Google Certified rating</p>
+            <p className='paragraph1'>
+            {section2_cards.card1.paragraph}
+            </p>
 
           </div>
-        </div>
+
+            {/* google  */}
+            <div className='tilt-inner-element flex-1 flex flex-col px-[1rem]
+            accent1-light-bgg m-[1rem] rounded-[10px] items-center justify-center'>
+                
+                <div className='flex-c-c'>
+                  <div className='w-[200px] h-[70px] relative'>
+                    <Image fill src="/images/google-white-logo.png" alt="google reviews logo"
+                    className='grayscale brightness-[2.5]'></Image>
+                  </div>
+
+                </div>
+
+                <div className='w-[200px] h-[40px] mt-[0.5rem] flex-c-c relative'>
+                <Image fill src="/images/stars.png" alt="google reviews logo"
+                    className='grayscale brightness-[2.5]'></Image>
+                </div>
+
+                <p className='text-sm opacity-80 font-light font-sans'>Google Certified rating</p>
+
+            </div>
+        </Tilt>
 
 
-        {/* light card */}
+
+        {/* light / Wide / Image card */}
         <div className='section2LightCard opacity-0 translate-x-[100px] flex-1 h-[min(calc(200px+20vw),400px)] rounded-[10px]
         vp5:w-[50%] accent1-light-bg box_shadow_dark_main
         px-[2rem] py-[2rem] flex flex-col justify-center gap-[1rem] relative overflow-hidden
         text-white'>
 
 
-          <p className='paragraph2 w-[70%] mt-auto z-[1] text_shadow_2'>
+          <p className='paragraph2 vp5:w-[70%] mt-auto z-[1] text_shadow_2'>
             <span className='font-bold text_shadow_2'>Our mission - </span>{section2_cards.card2.mission}
           </p>
 
-          <p className='paragraph2 w-[70%] z-[1] text_shadow_2'>
+          <p className='paragraph2 vp5:w-[70%] z-[1] text_shadow_2'>
             <span className='font-bold text_shadow_2'>Our vision - </span>{section2_cards.card2.vision}
           </p>
 
@@ -164,7 +176,8 @@ const SectionTwo = () => {
             linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.90) 100%), url("${allText.section2.cardImage1}")
             `,
             backgroundPosition: "center",
-            backgroundSize: "contain",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat"
             }}>
 
           </div>
@@ -173,13 +186,13 @@ const SectionTwo = () => {
 
 
         {/* dark card small view port */}
-        <div className='absolute top-[2rem] right-[1rem] rotate-[16deg] vp5:hidden parallaxCard3
+        <div className='absolute top-[26rem] vp3:top-[2rem] right-[1rem] rotate-[16deg] vp5:hidden parallaxCard3
         mx-auto w-[min(calc(100px+10vw),200px)] h-[min(calc(100px+10vw),200px)] rounded-[10px]
-        accent1-dark-bg text-white text-xs p-[0.5rem] flex flex-col gap-[0.25rem]  vp3:gap-[0.5rem]
+        accent1-dark-bg text-white text-base p-[0.5rem] flex flex-col gap-[0.25rem]  vp3:gap-[0.5rem]
         items-center justify-center z-[1]'>
-           <h3 className='font-semibold'>
+           {/* <h3 className='font-semibold'>
             {section2_cards.card1.header}
-          </h3>
+          </h3> */}
 
           <p className="font-light font-sans text-center">
            {section2_cards.card1.paragraph}
