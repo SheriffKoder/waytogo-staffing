@@ -15,7 +15,7 @@ export default function Home() {
       </section>
 
 
-      <section className="w-full relative overflow-x-hidden" id="about">
+      <section className="w-full relative overflow-x-hidden overflow-y-hidden" id="about">
         <SectionTwo/>
       </section>
 

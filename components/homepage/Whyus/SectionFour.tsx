@@ -5,6 +5,7 @@ import { allText, sectionFour_contents } from '@/constants'
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
 import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
+import {calculateYearsFrom} from "@/components/Helpers/Functions"
 
 const SectionFour = () => {
 
@@ -162,7 +163,11 @@ const SectionFour = () => {
                 <div className='w-full h-full flex flex-col vp9:flex-row vp4:gap-2 relative'>
                     <div className='w-full h-[1px] bg-[#252525] absolute bottom-0 bottomLine opacity-[0]'/>
                     <h3 className='heading2 min-w-[30%] vp9:mt-auto title translate-x-[-20px] opacity-0'>{content.header}</h3>
-                    <p className='paragraph1 vp9:mt-auto vp9:mb-[10px] content translate-x-[-20px] opacity-0'>{content.paragraph}</p>
+                    <p className='paragraph1 vp9:mt-auto vp9:mb-[10px] content translate-x-[-20px] opacity-0'>
+                      {content.paragraph.indexOf("yearsNum") > 0 ? 
+                      content.paragraph.split("yearsNum")[0]+""+calculateYearsFrom(2014)+""+content.paragraph.split("yearsNum")[1]  
+                      : content.paragraph}
+                    </p>
                 </div>
 
         

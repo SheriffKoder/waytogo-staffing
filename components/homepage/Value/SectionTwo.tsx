@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
 import Image from 'next/image';
 import Tilt from 'react-parallax-tilt';
+import {calculateYearsFrom} from "@/components/Helpers/Functions"
 
 
 const SectionTwo = () => {
@@ -84,7 +85,7 @@ const SectionTwo = () => {
   },[]);
 
   return (
-    <div className='w-full h-[80vh] vp4:min-h-[90vh] flex flex-col max-w-[1400px] mx-auto
+    <div className='w-full h-[100vh] vp2:h-[95vh] vp4:min-h-[90vh] flex flex-col max-w-[1400px] mx-auto
     px-[1rem] vp4:px-[2rem] mt-[6rem] vp4:mt-[12rem] vp5:mt-[16rem]' id="section2Container">
 
       <h2 className="flex flex-row gap-4 heading1 items-center text-center flex-wrap leading-[calc(6vw+1rem)] mb-[2rem] pr-[2rem] vp2:pr-[30vw] vp4:pr-[30vw] vp4:px-[2rem] vp6:pr-0">
@@ -99,7 +100,7 @@ const SectionTwo = () => {
 
       <p className='paragraph2 vp4:px-[2rem] w-[70%] m-[2rem] mt-0 ml-[1rem] section2Para translate-y-[25px] opacity-0'>
           At Way to Go Staffing, we understand that your success starts with exceptional people. Our unwavering commitment to quality and reliability ensures that every placement strengthens your business. With over 
-          <span className='font-bold'> 8 years of staffing expertise</span>, we deliver a
+          <span className='font-bold'> {calculateYearsFrom(2014)} years of staffing expertise</span>, we deliver a
           <span className='font-bold'> 99% client satisfaction</span> rate and proudly 
           <span className='font-bold'> serve over 100 hospitality businesses.</span> Trusted for our precision in matching the right talent to the right roles, we work efficiently to help you 
           <span className='italic'> achieve your goals—every time.</span>

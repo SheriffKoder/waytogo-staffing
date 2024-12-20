@@ -23,7 +23,7 @@ const page = () => {
                 scrub: true,
                 pin: ".grid",
                 anticipatePin: 1,
-                markers: true,
+                // markers: true,
               }
         })
 
@@ -36,7 +36,7 @@ const page = () => {
                 scrub: true,
                 pin: ".grid",
                 anticipatePin: 1,
-                markers: true,
+                // markers: true,
               }
         })
           
@@ -110,7 +110,7 @@ const page = () => {
             </div>
             
             <div className='w-full zoomContainer sticky flex items-center 
-            justify-center tb top-[90vh]'>
+            justify-center top-[90vh]'>
             <div className='zoomBox h-[200px] w-[500px] rounded-[20px] 
              bg-red-400'>
 

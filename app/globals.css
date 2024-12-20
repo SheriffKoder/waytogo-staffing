@@ -43,6 +43,9 @@ body {
 /* //////////////////////////////////////////////////////////////////////// */
 /* text related */
 
+/* outline-none focus:outline-2 focus:outline-offset-3 */
+
+
 
 .accent1-t {
  @apply text-[#A58964]
@@ -125,7 +128,11 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 
 .paragraph2 {
   @apply f_rale text-[min(calc(0.5rem+0.75vw),18px)]
-  }
+}
+
+.paragraph3 {
+  @apply f_rale text-[min(calc(0.5rem+1.2vw),30px)]
+}
 
 .signature {
   @apply f_rouge text-[min(calc(0.75rem+6vw),75px)]    accent1-t
@@ -140,6 +147,31 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 
+
+.FormInput {
+  @apply
+  focus:outline-[#387ca4]
+  caret-[#387ca4]
+  placeholder-[#6464645b]
+  text-[#000000]
+
+  bg-[rgba(0,0,0,0.03)]
+  px-2
+  h-[2.25rem]
+  border
+  rounded-[3px]
+  border-[#8f8f8f]
+  w-[200px]
+}
+
+.FormLabel {
+ @apply paragraph1
+}
+
+.FormLabel2 {
+  @apply paragraph1
+
+}
 
 .tb {
   @apply border border-black
@@ -189,7 +221,7 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 :root {
 	--cards: 8;
 	--cardHeight: 92vh;
-	--cardTopPadding: 5em;
+	--cardTopPadding: 80px;
 	--cardMargin: 4vw;
 }
 
@@ -287,6 +319,12 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 	align-items: center;
 	transition: all 0.5s;
 }
+
+.StackCardsContent {
+
+}
+
+
 /* 
 * {
   @apply tb
@@ -462,3 +500,7 @@ button.splide__arrow svg {
 
   }
 }
+
+
+
+

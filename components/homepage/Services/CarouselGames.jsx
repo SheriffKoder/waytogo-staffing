@@ -84,8 +84,8 @@ function CarouselGames() {
             </div>
 
             <div className='absolute w-[50px] aspect-square rounded-full accent2-bg bottom-[-2rem]
-            left-[50%] swipe_rotate'>
-                <div className='w-full h-full invert'
+            left-[50%] translate-x-[-50%]'>
+                <div className='w-full h-full invert swipe_rotate'
                 style={{
                     backgroundImage: 'url("/images/swipe.png")',
                     backgroundSize: "80%",

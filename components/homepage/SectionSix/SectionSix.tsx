@@ -81,13 +81,13 @@ const SectionSix = () => {
                 </p>
 
                 <div className='mt-2 flex flex-col vp4:flex-row gap-2 justify-center w-full vp3:justify-start'>
-                    <button className='w-full accent1-bg rounded-full paragraph1 px-4 py-1 vp4:px-4 vp4:py-2 text-white'>
+                    <button className='w-full accent1-bg rounded-full paragraph1 px-4 py-2 vp4:px-4 vp4:py-2 text-white'>
                         <Link href="/">
                             Request a Consultation
                         </Link>                       
                     </button>
 
-                    <button className='w-full accent2-bg text-white rounded-full paragraph1 px-1 py-1 vp4:px-6 vp4:py-2'>
+                    <button className='w-full accent2-bg text-white rounded-full paragraph1 px-1 py-2 vp4:px-6 vp4:py-2'>
                         <Link href="/">
                             Join Our Team
                         </Link>

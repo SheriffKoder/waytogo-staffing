@@ -9,7 +9,7 @@ const allText = {
     },
     section2: {
         header: "The Value We Bring",
-        paragraph: "At Way to Go Staffing, we understand that your success starts with exceptional people. Our unwavering commitment to quality and reliability ensures that every placement strengthens your business. With over 8 years of staffing expertise, we deliver a 99% client satisfaction rate and proudly serve over 100 hospitality businesses. Trusted for our precision in matching the right talent to the right roles, we work efficiently to help you achieve your goals—every time.",
+        paragraph: "At Way to Go Staffing, we understand that your success starts with exceptional people. Our unwavering commitment to quality and reliability ensures that every placement strengthens your business. With over yearsNum years of staffing expertise, we deliver a 99% client satisfaction rate and proudly serve over 100 hospitality businesses. Trusted for our precision in matching the right talent to the right roles, we work efficiently to help you achieve your goals—every time.",
         cardImage1: "https://media.istockphoto.com/id/1498242299/photo/group-of-trainees-wearing-formal-clothes-in-hotel-professional-butler-courses.jpg?s=1024x1024&w=is&k=20&c=FN2YFrOjqatG0PGlYBa3MZy_Dhdexa5DM-VwmyfYCsw="
     },
     section3: {
@@ -27,7 +27,7 @@ const allText = {
     },
     section6: {
         image: "https://media.istockphoto.com/id/1198944463/photo/i-hope-youll-like-you-coffee.jpg?s=2048x2048&w=is&k=20&c=mMHzgmMTB9p2ibc68QNRepFevJnN_LHWUyMTf8et3Uc=",
-        header: "Professional and reliable waitstaff in NJ",
+        header: "Professional and reliable service staff",
         paragraph: "Contact us to get the best quality at the best price",
     }
 }
@@ -109,7 +109,7 @@ const sectionFour_contents = [
     },
     {
         header: "Industry Expertise",
-        paragraph: "With over 8 years of experience, we specialize in hospitality and events staffing, offering unmatched knowledge and insights.",
+        paragraph: "With over yearsNum years of experience, we specialize in hospitality and events staffing, offering unmatched knowledge and insights.",
     },
     {
         header: "Flexibility and Reliability",
@@ -127,10 +127,10 @@ const sectionFour_contents = [
         header: "Complimentary On-Site Training",
         paragraph: "We provide on-site training at no additional cost to align with your unique style of service and deliver a seamless guest experience.",
     },
-    {
-        header: "Fully Compliant with Labor Laws",
-        paragraph: "We adhere to all local, state, and federal labor laws, ensuring that all staff are properly compensated and treated with fairness and respect.",
-    },
+    // {
+    //     header: "Fully Compliant with Labor Laws",
+    //     paragraph: "We adhere to all local, state, and federal labor laws, ensuring that all staff are properly compensated and treated with fairness and respect.",
+    // },
 
 ]
 

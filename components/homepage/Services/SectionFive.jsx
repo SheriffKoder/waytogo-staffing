@@ -47,8 +47,8 @@ const SectionFive = () => {
       gsap.to(".CarouselContainer", {
         y:0,
         opacity: 1,
-        duration: 1,
-        // delay: 0.25,
+        duration: 1.5,
+        delay: 0.25,
         scrollTrigger: {
             trigger: "#section5Container",
             start: "10% bottom", // the default values

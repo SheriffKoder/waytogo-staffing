@@ -37,8 +37,8 @@ const ScrollStackCards = () => {
         duration: 1,
         scrollTrigger: {
             trigger: ".scrollFillText",
-            start: "105% 20%", // the default values
-            end: "110% 20%",
+            start: "120% 20%", // the default values
+            end: "110% 30%",
             scrub: true,
             // markers: true,
         }, 
@@ -69,13 +69,17 @@ const ScrollStackCards = () => {
               </Image>
   
               <div className='absolute w-full h-full flex flex-col bg-[#00000060]
-              text-white px-[5rem] pt-[calc(2rem+100px)]'
+              text-white px-[2rem] vp4:px-[5rem] pt-[5rem] vp3:pt-[calc(5rem+6vw)]'
               style={{
                 background: "#00000060",
                 background: "linear-gradient(160deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 51%, rgba(255,255,255,0) 100%)"
               }}>
+
+
                 <h3 className='heading2'>
-                  <span className='text-sm vp4:text-xl mr-[0.5rem]'>{index+1}</span>{card.header}</h3>
+                  {/* <span className='text-sm vp4:text-xl mr-[0.5rem]'>{index+1}</span> */}
+                  {card.header}
+                </h3>
                 <p className='paragraph1 max-w-[900px]'>{card.description}</p>
               </div>
   

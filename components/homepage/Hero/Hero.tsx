@@ -158,7 +158,7 @@ const Hero = () => {
 
 
             {/* // section's text w parallax */}
-            <div className='sticky top-[60%] vp2:top-[30%] vp3:top-[32%] parallax1 z-[2] max-w-[1400px] px-[2rem]
+            <div className='sticky top-[60%] vp2:top-[60%] vp3:top-[35%] parallax1 z-[2] max-w-[1400px] px-[2rem]
             flex items-start justify-center flex-col textHero translate-y-[5rem] opacity-0
             vp4:px-[4rem] mx-auto'>
 
@@ -179,13 +179,13 @@ const Hero = () => {
                 </p>
 
                 <div className='flex flex-row gap-2 justify-center w-full vp3:justify-start'>
-                    <button className='accent1-bg rounded-full paragraph1 px-4 py-1 vp4:px-6 vp4:py-2 text-white'>
+                    <button className='accent1-bg rounded-full paragraph1 px-4 py-2 vp4:px-6 vp4:py-2 text-white'>
                         <Link href="/">
                             Request a Consultation
                         </Link>
                     </button>
 
-                    <button className='accent2-bg text-white rounded-full paragraph1 px-4 py-1 vp4:px-6 vp4:py-2'>
+                    <button className='accent2-bg text-white rounded-full paragraph1 px-4 py-2 vp4:px-6 vp4:py-2'>
                         <Link href="#services">
                             View Our Services
                         </Link>
@@ -197,7 +197,7 @@ const Hero = () => {
 
 
             {/* Hero cards */}
-            <div className='opacity-0 HeroCard1 absolute top-[21%] vp4:top-[35%] right-[50%] vp3:right-[30%] vp4:right-[25%]
+            <div className='opacity-0 HeroCard1 absolute top-[21%] vp3:top-[30%] vp4:top-[35%] right-[50%] vp3:right-[25%] vp4:right-[20%]
             parallax2 z-[1] transition-all ease-linear duration-500
             w-[150px] h-[150px] rounded-[20px] rotate-[16deg]
             vp4:w-[300px] vp4:h-[300px] vp8:w-[450] vp8:h-[450] box_shadow_dark'
@@ -208,7 +208,7 @@ const Hero = () => {
             }}>   
             </div>
 
-            <div className='opacity-0 HeroCard2 absolute top-[21%] vp4:top-[35%] right-[52%] vp3:right-[30%] vp4:right-[25%]
+            <div className='opacity-0 HeroCard2 absolute top-[21%] vp3:top-[30%] vp4:top-[35%] right-[52%] vp3:right-[25%] vp4:right-[20%]
             parallax2 z-[1] transition-all ease-linear duration-500
             w-[150px] h-[150px] rounded-[20px] rotate-[-10deg]
             vp4:w-[300px] vp4:h-[300px] vp8:w-[450] vp8:h-[450] box_shadow_dark'
@@ -235,12 +235,13 @@ const Hero = () => {
             </div>
            
 
-            <div className='bottom-[20vw] vp2:bottom-[-20vw] vp4:bottom-[-10vw] vp5:bottom-[-2vw] 
-            vp6:bottom-[-3vw] absolute flex-c-c w-full'>
+            <div className='bottom-[40vw] vp2:bottom-[-5rem] vp3:bottom-[-10vw] vp4:bottom-[-10vw] vp5:bottom-[-4vw] 
+            vp6:bottom-[-6vw] absolute flex-c-c w-full'>
                 <div className='pb-[0rem] vp4:px-[4rem] parallaxPara
-                paragraph1 flex justify-center vp3:justify-start vp3:pl-[2rem]'>
+                paragraph3 flex justify-center vp3:justify-start vp3:pl-[2rem]'>
 
-                    <p className='max-w-[min(700px,80vw)] text-center vp3:text-start font-semibold text-xl'>
+                    <p className='max-w-[min(700px,80vw)] vp5:max-w-[min(1000px,80vw)] text-center vp3:text-start
+                    '>
                     Delivering tailored staffing solutions that prioritize quality, reliability, and trust—helping your business thrive with the right team.                    </p>
                 </div>
             </div>
