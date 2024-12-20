@@ -88,7 +88,7 @@ const SectionSix = () => {
                     </button>
 
                     <button className='w-full accent2-bg text-white rounded-full paragraph1 px-1 py-2 vp4:px-6 vp4:py-2'>
-                        <Link href="/">
+                        <Link href="/JoinUs">
                             Join Our Team
                         </Link>
                     </button>

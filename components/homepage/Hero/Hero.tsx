@@ -178,7 +178,7 @@ const Hero = () => {
                     </span>
                 </p>
 
-                <div className='flex flex-row gap-2 justify-center w-full vp3:justify-start'>
+                <div className='flex flex-row gap-2 justify-center w-full vp3:justify-start mt-[1rem]'>
                     <button className='accent1-bg rounded-full paragraph1 px-4 py-2 vp4:px-6 vp4:py-2 text-white'>
                         <Link href="/">
                             Request a Consultation
@@ -214,7 +214,8 @@ const Hero = () => {
             vp4:w-[300px] vp4:h-[300px] vp8:w-[450] vp8:h-[450] box_shadow_dark'
             style={{
                 backgroundImage: `url(${allText.hero.cardImage1})`,
-                backgroundSize: "300%",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
                 transform: "translateX(50%) rotate(-25deg)"
 
             }}>
@@ -242,7 +243,8 @@ const Hero = () => {
 
                     <p className='max-w-[min(700px,80vw)] vp5:max-w-[min(1000px,80vw)] text-center vp3:text-start
                     '>
-                    Delivering tailored staffing solutions that prioritize quality, reliability, and trust—helping your business thrive with the right team.                    </p>
+                    Delivering tailored staffing solutions that prioritize quality, reliability, and trust—helping your business thrive with the right team.                    
+                    </p>
                 </div>
             </div>
 

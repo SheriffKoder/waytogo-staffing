@@ -31,8 +31,11 @@ const Navbar = () => {
     <nav className='w-full h-auto py-[1.5rem] px-[1rem] vp4:px-[2rem] bg-[#fffffff1]
     fixed top-0 z-[99]'>
 
-    <Image src="/images/logo2.png" alt="company logo 1" 
-    className='absolute left-[1rem] top-[1rem] my-auto' width={75} height={50}></Image>
+    <Link href="/">
+      <Image src="/images/logo2.png" alt="company logo 1" 
+      className='absolute left-[1rem] top-[1rem] my-auto' width={100} height={70}></Image>
+    </Link>
+    
 
       <ul className='w-full flex flex-row gap-[1rem] vp4:gap-[4rem] paragraph1 justify-end vp4:justify-center'>
         {

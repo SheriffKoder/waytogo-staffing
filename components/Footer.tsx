@@ -11,8 +11,11 @@ const Footer = () => {
     h-[100px] flex items-center justify-end mt-[15rem]
     rounded-[20px]' style={{transform: 'translateY(-50%)'}}>
 
-    <Image src="/images/logo2.png" alt="company logo 1" 
-    className='' width={75} height={50}></Image>
+    <Link href="/">
+      <Image src="/images/logo2.png" alt="company logo 1" 
+      className='' width={100} height={70}></Image>
+    </Link>
+
 
       <ul className='ml-auto flex flex-row gap-[1rem] vp4:gap-[4rem] paragraph1 justify-end vp4:justify-center'>
         {

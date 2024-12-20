@@ -147,7 +147,7 @@ const ScrollFillText = () => {
         text-[calc(0.6rem+0.6vw)] font-ogg2 vp3:text-[min(45px,2.6vw)] vp7:text-[min(60px,3vw)]">
             <div className="vp3:pl-[1rem] textFill_text ">From elegant weddings to corporate events,</div>
             <div className="vp3:pl-[1rem] textFill_text ">private dinners, or large celebrations,</div>
-            <div className="vp3:pl-[1rem] textFill_text ">our waitstaff adapts seamlessly to any setting.</div>
+            <div className="vp3:pl-[1rem] textFill_text ">our service staff adapts seamlessly to any setting.</div>
             <div className="vp3:pl-[1rem] textFill_text ">Whether you need formal service or a casual touch,</div>
             <div className="vp3:pl-[1rem] textFill_text ">we provide tailored staffing to match</div>
             <div className="vp3:pl-[1rem] textFill_text ">your event's unique style and needs.</div>

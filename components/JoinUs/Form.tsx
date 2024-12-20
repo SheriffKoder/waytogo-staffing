@@ -69,7 +69,7 @@ const Form = () => {
       }
     
   return (
-    <form className="tb w-[700px]" onSubmit={handleSubmit}
+    <form className=" w-[700px]" onSubmit={handleSubmit}
     id="join_form__form">
 
     <div className="flex flex-col gap-4 w-full">
@@ -177,7 +177,7 @@ const Form = () => {
 
       {/* //////////////////////////////////////////////////////////////////////////////////// */}
       {/* address */}
-      <div className="flex flex-col gap-2 tb">
+      <div className="flex flex-col gap-2 ">
         <h2 className="FormLabel">Address</h2>
 
         {/* Line 1 */}
@@ -275,7 +275,7 @@ const Form = () => {
       </div>
 
       {/* Emergency person */}
-      <div className="flex flex-col gap-2 tb">
+      <div className="flex flex-col gap-2  ">
 
         <label className="FormLabel" htmlFor="emergency_firstname">
           Emergency Contact person
@@ -329,7 +329,7 @@ const Form = () => {
 
 
       {/* //////////////////////////////////////////////////////////////////////////////////// */}
-      <div className="tb">
+      <div className=" ">
 
         {/* position */}
         <div className="flex flex-row gap-2 flex-wrap">
@@ -408,7 +408,7 @@ const Form = () => {
       {/* //////////////////////////////////////////////////////////////////////////////////// */}
       {/* secondJob */}
 
-      <div className="tb flex flex-col gap-2">
+      <div className="  flex flex-col gap-2">
         <fieldset className="flex flex-row gap-2 flex-wrap">
           <legend className="FormLabel w-full">Do you have a second job or other commitments that would interfer while working with Way To Go?</legend>
           <div className="flex flex-col gap-2">
@@ -473,7 +473,7 @@ const Form = () => {
 
       {/* //////////////////////////////////////////////////////////////////////////////////// */}
       {/* other questions */}
-      <div className="tb flex flex-col gap-2">
+      <div className="  flex flex-col gap-2">
       {/* documents */}
         <fieldset className="flex flex-col gap-2 flex-wrap">
           <legend className="FormLabel w-full">Would you be able to provide legal work documents if chosen for hire? (SSN, ITIN#, etc)</legend>
@@ -556,7 +556,7 @@ const Form = () => {
 
       </div>
 
-      <button className="accent1-bg px-2 py-2 w-[300px] rounded-full">
+      <button className="accent1-bg px-2 py-2 w-[300px] rounded-full mt-[3rem] mx-auto">
         Submit
       </button>
 
