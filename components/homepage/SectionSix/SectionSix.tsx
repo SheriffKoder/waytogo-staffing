@@ -1,14 +1,14 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
 import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
 
 import { allText } from '@/constants'
 import Link from 'next/link';
+import CalendarButton from '@/components/GoogleCalendar/CalendarButton'
 
 const SectionSix = () => {
-
 
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -16,7 +16,7 @@ const SectionSix = () => {
 
         // parallax cards
         gsap.to(".parallax6_1", {
-            yPercent: -150,
+            yPercent: -50,
             x: window.innerWidth > 700 ? -60 : -15,
             // rotate: "90deg",
             ease: "none",
@@ -32,7 +32,7 @@ const SectionSix = () => {
 
                     // parallax cards
         gsap.to(".parallax6_2", {
-            yPercent: -150,
+            yPercent: -50,
             x: window.innerWidth > 700 ? 60 : 20,
             // rotate: "90deg",
             ease: "none",
@@ -52,22 +52,20 @@ const SectionSix = () => {
 
 
   return (
-    <div className='flex items-end justify-center min-h-[70vh] w-full section6Container relative
-    '>
+    <div className='flex items-center justify-center min-h-[70vh] h-[100vh] w-full section6Container relative
+    pb-[10vh]'>
 
             <div className='SixCard1 box_shadow_dark
-            w-[70vw] h-[35vh]
-            vp4:w-[min(600px,65vw)] vp4:h-[min(360px,30vw)] 
+            w-[85vw] vp4:w-[min(600px,65vw)]
+            h-[40vh] vp4:h-[min(360px,30vw)]
             rounded-[20px]
             parallax6_1 accent1-light-bg 
             translate-y-[0vw] z-[1]
-            top-[120%] vp4:top-[100%]
-            absolute left-[40%] vp4:left-[42%]
-            flex p-[2rem] flex-col text-black items-start justify-center gap-[0.5rem]'
+            top-[80%] vp4:top-[70%]
+            absolute left-[45%] vp4:left-[35%]
+            flex p-[1rem] vp4:p-[2rem]
+            flex-col text-black items-start justify-center gap-[0.5rem]'
             style={{
-                // backgroundImage: `url(${allText.hero.cardImage1})`,
-                // backgroundSize: "300%",
-                // transform: "translateX(50%) rotate(-25deg)"
                 transform: 'translate(-50%,-50%)',
             }}>
                 
@@ -81,18 +79,17 @@ const SectionSix = () => {
                 </p>
 
                 <div className='mt-2 flex flex-col vp4:flex-row gap-2 justify-center w-full vp3:justify-start'>
-                    <button className='w-full accent1-bg rounded-full paragraph1 px-4 py-2 vp4:px-4 vp4:py-2 text-white
-                      focus:outline-[#A58964] hover:outline-[#A58964] trans1 outline-transparent outline outline-2 outline-offset-4
-                    focus:bg-[#9b795d] hover:bg-[#9b795d]'>
-                        <Link href="/">
-                            Request a Consultation
-                        </Link>                       
-                    </button>
+                    <CalendarButton
+                        targetId="six-calendar" 
+                        className='w-full accent1-bg rounded-full paragraph1 px-4 py-2 vp4:px-4 vp4:py-2 text-white
+                        focus:outline-[#A58964] hover:outline-[#9b795d] trans1 outline-transparent outline outline-2 outline-offset-4
+                        cursor-pointer'
+                    />
 
                     <button className='w-full accent2-bg text-white rounded-full paragraph1 px-1 py-2 vp4:px-6 vp4:py-2
                     focus:outline-[#13162e] hover:outline-[#13162e] trans1 outline-transparent outline outline-2 outline-offset-4
                     focus:bg-[#13162e] hover:bg-[#13162e]'>
-                        <Link href="/JoinUs">
+                        <Link href="/join-us">
                             Join Our Team
                         </Link>
                     </button>
@@ -102,11 +99,11 @@ const SectionSix = () => {
             </div>
 
             <div className='SixCard1 box_shadow_dark
-            w-[70vw] h-[60vh]
-            vp4:w-[min(580px,70vw)] vp4:h-[min(450px,40vw)] 
-            rounded-[20px] mr-[10vw]
-            top-[100%] vp4:top-[80%] vp5:top-[80%]
-            parallax6_2 absolute left-[55%] vp4:left-[58%]'
+            w-[85vw] vp4:w-[min(580px,70vw)]
+            h-[45vh] vp4:h-[min(450px,40vw)]
+            rounded-[20px] mr-0 vp4:mr-[10vw]
+            top-[40%] vp4:top-[50%]
+            parallax6_2 absolute left-[55%] vp4:left-[65%]'
             style={{
                 backgroundImage: `url(${allText.section6.image})`,
                 backgroundPosition: "center",
@@ -120,6 +117,22 @@ const SectionSix = () => {
 
     </div>
   )
+}
+
+// Add TypeScript declaration for the calendar object
+declare global {
+  interface Window {
+    calendar?: {
+      schedulingButton: {
+        load: (config: {
+          url: string;
+          color: string;
+          label: string;
+          target: HTMLElement | null;
+        }) => void;
+      };
+    };
+  }
 }
 
 export default SectionSix
