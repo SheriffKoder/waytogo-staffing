@@ -37,14 +37,14 @@ export default function Home() {
 
 
       <div className="sticky bottom-[1rem] ml-auto mr-[1rem] flex flex-col gap-2 z-[99]">
-        <button className="w-[35px] h-[35px] accent2-bg rounded-full flex items-center justify-center">
+        <button className="w-[35px] h-[35px] accent2-bg hover:bg-[#A58964] trans1 rounded-full flex items-center justify-center">
           <a href="https://www.facebook.com/wtgstaffing/" aria-label="Way to go staffing - facebook page">
 
           <svg fill="#ffff" width="20px" height="20px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M 19.253906 2 C 15.311906 2 13 4.0821719 13 8.8261719 L 13 13 L 8 13 L 8 18 L 13 18 L 13 30 L 18 30 L 18 18 L 22 18 L 23 13 L 18 13 L 18 9.671875 C 18 7.884875 18.582766 7 20.259766 7 L 23 7 L 23 2.2050781 C 22.526 2.1410781 21.144906 2 19.253906 2 z"/></svg>
           </a>
 
         </button>
-        <button className="w-[35px] h-[35px] accent2-bg rounded-full flex items-center justify-center">
+        <button className="w-[35px] h-[35px] accent2-bg hover:bg-[#A58964] trans1 rounded-full flex items-center justify-center">
         <a href="https://www.instagram.com/wtgstaffing/" aria-label="Way to go staffing - instagram page">
           <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#ffffff"/>

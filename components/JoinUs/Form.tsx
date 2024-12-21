@@ -35,6 +35,9 @@ interface EmailBody {
   referral_name: string;
 }
 
+// form images
+// form browser errors
+// 
 const Form = () => {
 
   const images = [

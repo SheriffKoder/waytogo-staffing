@@ -155,89 +155,11 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 
 
 
-.FormInput, .FormInput2 {
-  @apply
-  focus:outline-[#A58964]
-  caret-[#387ca4]
-  placeholder-[#6464645b]
-  text-[#000000]
-
-  bg-[#f8f8f8]
-  focus:bg-[#e7e7e7]
-  px-2
-  h-[2.25rem]
-  border
-  rounded-[3px]
-  focus:border-[#A58964]
-  border-[#d1bca0]
-  w-full
-}
-/* border-black border */
-.form_section {
-@apply flex flex-col gap-[2rem]
- rounded-[10px] p-[1rem] bg-[#ffffff] box_shadow_light w-full max-w-[550px] mx-auto
-}
-
-.form_area legend {
-  @apply mb-[0.5rem]
-}
-.form_area {
-  @apply flex flex-col gap-2 vp3:px-[0.5rem]
-}
-
-.form_area_x3 {
-  @apply flex vp3:flex-row gap-2 vp3:gap-1
-}
-.form_radio_row {
-  @apply flex flex-row gap-2 flex-wrap mt-[0rem] mb-[1rem]
-}
-
-.FormInput2 {
-  @apply vp3:w-[30ppx]
-}
-
-.form_row {
-  @apply flex flex-col gap-2 vp3:flex-row
-}
-.FormLabel {
-@apply f_rale text-[min(calc(0.75rem+1.5vw),20px)] font-normal 
-}
-
-.form_section h2 {
-  @apply f_rale text-[min(calc(0.75rem+2vw),35px)] text-center
-  font-semibold accent1-bg text-white px-[1rem] py-[0.5rem] rounded-[5px]
-}
-
-.form_section:focus-within h2 {
-  @apply bg-[#191e3e] trans1
-}
-
-#join_form button[type=submit] {
-  @apply accent1-bg px-2 py-2 w-[300px] rounded-full mx-auto text-white
-  focus:outline-[#A58964] hover:outline-[#A58964] outline-offset-4
-  focus:bg-[#9b795d] hover:bg-[#9b795d]
-}
-
-#join_form textarea {
-  @apply h-[100px]
-}
-
-input[type=checkbox], input[type=radio] {
-  accent-color: #A58964;
-}
-
-/* .form_section:focus-within input[type=checkbox],  .form_section:focus-within input[type=radio] {
-  accent-color: #191e3e;
-} */
 
 
-.FormLabel2 {
-  @apply pl-0
-}
-
-/* .tb {
+.tb {
   @apply border border-black
-} */
+}
 
 .trans1 {
   @apply duration-150 ease-linear transition-all
@@ -400,6 +322,7 @@ input[type=checkbox], input[type=radio] {
 .is-next img {
   filter: brightness(1);
 } */
+
 
 /* ///////////////////////////////////////////////////////////////////////// */
 /* carousel - our services */
@@ -564,5 +487,85 @@ button.splide__arrow svg {
 }
 
 
+/* ///////////////////////////////////////////////////////////////////////// */
+/* Form */
+.FormInput, .FormInput2 {
+  @apply
+  focus:outline-[#A58964]
+  caret-[#387ca4]
+  placeholder-[#6464645b]
+  text-[#000000]
 
+  bg-[#f8f8f8]
+  focus:bg-[#e7e7e7]
+  px-2
+  h-[2.25rem]
+  border
+  rounded-[3px]
+  focus:border-[#A58964]
+  border-[#d1bca0]
+  w-full
+}
+/* border-black border */
+.form_section {
+@apply flex flex-col gap-[2rem]
+ rounded-[10px] p-[1rem] bg-[#ffffff] box_shadow_light w-full max-w-[550px] mx-auto
+}
+
+.form_area legend {
+  @apply mb-[0.5rem]
+}
+.form_area {
+  @apply flex flex-col gap-2 vp3:px-[0.5rem]
+}
+
+.form_area_x3 {
+  @apply flex vp3:flex-row gap-2 vp3:gap-1
+}
+.form_radio_row {
+  @apply flex flex-row gap-2 flex-wrap mt-[0rem] mb-[1rem]
+}
+
+.FormInput2 {
+  @apply vp3:w-[30ppx]
+}
+
+.form_row {
+  @apply flex flex-col gap-2 vp3:flex-row
+}
+.FormLabel {
+@apply f_rale text-[min(calc(0.75rem+1.5vw),20px)] font-normal 
+}
+
+.form_section h2 {
+  @apply f_rale text-[min(calc(0.75rem+2vw),35px)] text-center
+  font-semibold accent1-bg text-white px-[1rem] py-[0.5rem] rounded-[5px]
+}
+
+.form_section:focus-within h2 {
+  @apply bg-[#191e3e] trans1
+}
+
+#join_form button[type=submit] {
+  @apply accent1-bg px-2 py-2 w-[300px] rounded-full mx-auto text-white
+  focus:outline-[#A58964] hover:outline-[#A58964] outline-offset-4
+  focus:bg-[#9b795d] hover:bg-[#9b795d]
+}
+
+#join_form textarea {
+  @apply h-[100px]
+}
+
+input[type=checkbox], input[type=radio] {
+  accent-color: #A58964;
+}
+
+/* .form_section:focus-within input[type=checkbox],  .form_section:focus-within input[type=radio] {
+  accent-color: #191e3e;
+} */
+
+
+.FormLabel2 {
+  @apply pl-0
+}
 

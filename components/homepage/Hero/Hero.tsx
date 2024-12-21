@@ -179,13 +179,17 @@ const Hero = () => {
                 </p>
 
                 <div className='flex flex-row gap-2 justify-center w-full vp3:justify-start mt-[1rem]'>
-                    <button className='accent1-bg rounded-full paragraph1 px-4 py-2 vp4:px-6 vp4:py-2 text-white'>
+                    <button className='accent1-bg rounded-full paragraph1 px-4 py-2 vp4:px-6 vp4:py-2 text-white
+                    focus:outline-[#A58964] hover:outline-[#A58964] trans1 outline-transparent outline outline-2 outline-offset-2
+                    focus:bg-[#9b795d] hover:bg-[#9b795d]'>
                         <Link href="/">
                             Request a Consultation
                         </Link>
                     </button>
 
-                    <button className='accent2-bg text-white rounded-full paragraph1 px-4 py-2 vp4:px-6 vp4:py-2'>
+                    <button className='accent2-bg text-white rounded-full paragraph1 px-4 py-2 vp4:px-6 vp4:py-2
+                    focus:outline-[#13162e] hover:outline-[#13162e] trans1 outline-transparent outline outline-2 outline-offset-4
+                    focus:bg-[#13162e] hover:bg-[#13162e]'>
                         <Link href="#services">
                             View Our Services
                         </Link>
