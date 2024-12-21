@@ -13,11 +13,13 @@
     "@next/font": "^14.2.15",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "@types/react-lottie": "^1.2.10",
     "gsap": "^3.12.5",
     "lenis": "^1.1.18",
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-lottie": "^1.2.10",
     "react-parallax-tilt": "^1.7.267",
     "smooth-scrollbar": "^8.8.4"
   },

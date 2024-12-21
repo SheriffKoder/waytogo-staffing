@@ -2,12 +2,51 @@
 
 import React, { useState } from "react"
 import { ChangeEventHandler, FormEventHandler } from "react";
+import ImageSlider from "./slider2"
+import { redirect } from "next/navigation";
 
+interface EmailBody {
+  firstname: string;
+  lastname: string;
+  birth: string;
+  phone: string;
+  email: string;
+  gender: string; // male, female
+
+  address_Line1: string;
+  address_Line2: string;
+  city: string;
+  state: string;
+  code: string; // zip code number
+  languages: string[]; // array of strings
+
+  emergency_firstname: string;
+  emergency_lastname: string;
+  emergency_phone: string;
+
+  secondJob: string; // yes/no/other
+  experience: string; // yes/no
+  position: string[]; // array of desired positions
+  desired_days: string[];
+  experience_field: string;
+  documents: string; // yes/no
+  drive: string; // yes/no
+  referral: string[]; // array of referral platforms
+  referral_name: string;
+}
 
 const Form = () => {
 
+  const images = [
+"/sectionFiveImages/1.jpg",
+"/sectionFiveImages/2.jpg",
+"/sectionFiveImages/3.jpg",
+"/sectionFiveImages/4.jpg",
+"/sectionFiveImages/5.jpg",
+  ];
+
  ////////////////////////////////////////////////////////////////////////////////////
- const [emailBody, setEmailBody] = useState({
+ const [emailBody, setEmailBody] = useState<EmailBody>({
   firstname: "",
   lastname: "",
   birth : "",
@@ -20,7 +59,7 @@ const Form = () => {
   city: "",
   state: "",
   code: "",                 // zip code number
-  languages: "",            // array or strings
+  languages: [],            // array or strings
 
   emergency_firstname: "",
   emergency_lastname: "",
@@ -28,11 +67,12 @@ const Form = () => {
 
   secondJob: "",            // string yes/no/other
   experience: "",           // string yes/no       
-  position: "",             // array of desired positions
+  position: [],             // array of desired positions
+  desired_days: [],
   experience_field : "",
   documents: "",            // string yes/no
   drive: "",                // string yes/no
-  referral: "",             // array of referral platforms
+  referral: [],             // array of referral platforms
   referral_name: "",
 
   });
@@ -44,15 +84,61 @@ const Form = () => {
 
   // const messageContainer_inquiry = useRef<HTMLDivElement>(null)
 
-  const handleChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement > = ({ target }) => {
+    const handleChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement > = ({ target }) => {
 
-    const { name, value } = target;
-    setEmailBody({ ...emailBody, [name]:value});
-    console.log(emailBody);
+      const { name, value } = target;
+      setEmailBody({ ...emailBody, [name]:value});
+      console.log(emailBody);
 
-  }
+    }
+
+    /////////////////////////////////////////////////////////////////////////////
+    // checkbox functionality
+    const handleCheckboxChange = (e:any) => {
+      const { name, value, checked } = e.target; // Get name, value, and checked from the checkbox
+      setEmailBody((prevState:any) => {
+        const updatedArray = checked
+          ? [...prevState[name], value] // Add to the array if checked
+          : prevState[name].filter((item:any) => item !== value); // Remove from the array if unchecked
+
+        return {
+          ...prevState,
+          [name]: updatedArray, // Dynamically update the array based on the name
+        };
+      });
+      console.log(emailBody);
+    };
+
+    /////////////////////////////////////////////////////////////////////////////
+    // language functionality
+    const [inputValue, setInputValue] = useState<string>("");
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+      setInputValue(e.target.value);
+    };
+
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+      if (e.key === " " && inputValue.trim() !== "") {
+        // Add the word to the languages array
+        setEmailBody((prevState) => ({
+          ...prevState,
+          languages: [...prevState.languages, inputValue.trim()],
+        }));
+        setInputValue(""); // Clear the input field
+      }
+    };
+
+    const handleRemoveLanguage = (language: string): void => {
+      setEmailBody((prevState) => ({
+        ...prevState,
+        languages: prevState.languages.filter((lang) => lang !== language),
+      }));
+    };
+
+    
 
 
+    /////////////////////////////////////////////////////////////////////////////
     //handle the inquiry submission
     const handleSubmit: FormEventHandler<HTMLFormElement>  = async (e) => {
         e.preventDefault();
@@ -61,506 +147,595 @@ const Form = () => {
               method: "POST",
               body: JSON.stringify(emailBody),
     
-          }).then((res) => res.json());
-          console.log(res);
+          }).then((response) => {
+            console.log(response.ok);
+            if (response.ok) {
+              // showEmailConfirm();
+              let modal = document.querySelector<HTMLElement>("#formModal");
+              if (modal) {
+                modal.style.display = "flex";
+                setTimeout(()=> {
+                  modal.style.display = "none";
+                  redirect("/");
+                }, 5000);
+              }
+
+            
+            }
+          });
     
-        //   if (res === "Email Sent") showEmailConfirm();
+          // if (res === "Email Sent") showEmailConfirm();
     
       }
     
   return (
-    <form className=" w-[700px]" onSubmit={handleSubmit}
-    id="join_form__form">
+    <form className="px-[1rem] flex flex-col gap-[3rem] mx-auto relative max-w-[1200px]" onSubmit={handleSubmit}
+    id="join_form">
 
-    <div className="flex flex-col gap-4 w-full">
 
-      {/* //////////////////////////////////////////////////////////////////////////////////// */}
-      {/* name */}
-      <div className="flex flex-col gap-2">
+      {/* small view port header */}
+      <div className="px-[1rem] mb-[-1rem] vp4:hidden">
+        <h1 className="heading1">Join our team</h1>
+        <p className="f_rale text-[min(calc(0.75rem+2.5vw),44px)] ">Let us make a difference</p>
+      </div>
 
-        <label className="FormLabel" htmlFor="firstname">
-          Name
-        </label>
+      <div className="flex flex-col vp4:flex-row gap-[3rem]">
+        
+        {/* larger view port header and image slider */}
+        <div className="vp4:flex-1 order-2 vp4:h-[85vh] vp4:sticky top-[12%] vp4:border hidden 
+        vp4:flex flex-col accent2-bg text-white rounded-[10px] overflow-hidden
+        ">
+          <div className="absolute px-[2rem] pt-[1rem] z-[1] w-full h-full"
+           style={{
+            background: "linear-gradient(160deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 21%, rgba(255,255,255,0) 100%)"
+          }}>
+            <h1 className="heading2">Join our team</h1>
+            <p className="f_rale text-[min(calc(0.75rem+1vw),35px)] ">Let us make a difference</p>
+          </div>
 
-        <div className="flex flex-row gap-[2rem]">
-          <input
-            className="FormInput w-[200px]"
-            id="firstname"
-            maxLength={35}
-            name="firstname"
-            value={firstname}
-            onChange={handleChange}
-            required
-            type="text"
-            placeholder="First Name"
-            />
-
-          <input
-            className="FormInput"
-            id="lastname"
-            maxLength={35}
-            name="lastname"
-            value={lastname}
-            onChange={handleChange}
-            required
-            type="text"
-            placeholder="Last Name"
-            />
-
+            <ImageSlider images={images}/>
         </div>
 
+        {/* form sections */}
+        <div className="flex flex-col gap-[3rem] mx-auto order-1">
+          <div className="form_section">
+            <h2 className="FormLabel">Personal Information</h2>
+            {/* //////////////////////////////////////////////////////////////////////////////////// */}
+            {/* name */}
+            <div className="form_area">
 
-      </div>
+              <label className="FormLabel" htmlFor="firstname">
+                Name
+              </label>
 
+              <div className="form_row">
+                <input
+                className="FormInput2"
+                id="firstname"
+                maxLength={35}
+                name="firstname"
+                value={firstname}
+                onChange={handleChange}
+                 
+                type="text"
+                placeholder="First Name"
+                />
 
-      {/* date of birth */}
-      <div className="flex flex-col gap-2">
-        <label className="FormLabel" htmlFor="birth">
-          Date of Birth
-        </label>
-        <input
-          className="FormInput"
-          id="birth"
-          name="birth"
-          value={birth}
-          onChange={handleChange}
-          required
-          type="date" 
-          />
-      </div>
+                <input
+                className="FormInput2"
+                id="lastname"
+                maxLength={35}
+                name="lastname"
+                value={lastname}
+                onChange={handleChange}
+                 
+                type="text"
+                placeholder="Last Name"
+                />
+              </div>
 
-      {/* phone */}
-      <div className="flex flex-col gap-2">
-        <label className="FormLabel" htmlFor="phone">
-          Phone Number
-        </label>
-        <input
-          className="FormInput"
-          id="phone"
-          maxLength={35}
-          name="phone"
-          value={phone}
-          onChange={handleChange}
-          required
-          type="text"
-          placeholder="+00123456789"/>
-      </div>
+            </div>
 
-      {/* email */}
-      <div className="flex flex-col gap-2">
-        <label className="FormLabel" htmlFor="email">
-          Email
-        </label>
-        <input
-          className="FormInput"
-          id="email"
-          maxLength={35}
-          name="email"
-          value={email}
-          onChange={handleChange}
-          required
-          type="email" 
-          placeholder="youremail@email.com"
-          />
-      </div>
+            {/* date of birth */}
+            <div className="form_area">
+              <label className="FormLabel" htmlFor="birth">
+                Date of Birth
+              </label>
 
-      {/* gender */}
-      <fieldset className="flex flex-row gap-2 flex-wrap">
-        <legend className="FormLabel w-full">Gender</legend>
-        <input type="radio" name="gender" id="male_radio" value="male" onChange={handleChange}/><label htmlFor="male_radio">Male</label><br />
-        <input type="radio" name="gender" id="female_radio" value="female"  onChange={handleChange}/><label htmlFor="female_radio">Female</label>
-      </fieldset>
-      {/* //////////////////////////////////////////////////////////////////////////////////// */}
+              <input
+                className="FormInput"
+                id="birth"
+                name="birth"
+                value={birth}
+                onChange={handleChange}
+                 
+                type="date" 
+                />
 
+            </div>
 
-
-
-      {/* //////////////////////////////////////////////////////////////////////////////////// */}
-      {/* address */}
-      <div className="flex flex-col gap-2 ">
-        <h2 className="FormLabel">Address</h2>
-
-        {/* Line 1 */}
-        <input
-          className="FormInput"
-          id="Address_Line1"
-          maxLength={35}
-          name="address_Line1"
-          value={address_Line1}
-          onChange={handleChange}
-          required
-          type="text" 
-          placeholder=""
-          />
-        <label className="FormLabel2" htmlFor="address_Line1">
-          Street Address
-        </label>
-
-        {/* Line 2 */}
-        <input
-          className="FormInput"
-          id="Address_Line2"
-          maxLength={35}
-          name="address_Line2"
-          value={address_Line2}
-          onChange={handleChange}
-          required
-          type="text" 
-          placeholder=""
-          />
-        <label className="FormLabel2" htmlFor="address_Line2">
-          Street Address Line 2
-        </label>
-
-        {/* City , State */}
-        <div className="flex flex-row gap-[2rem]">
-
-          <div className="flex flex-col gap-2">
+            {/* phone */}
+            <div className="form_area">
+            <label className="FormLabel" htmlFor="phone">
+              Phone Number
+            </label>
             <input
               className="FormInput"
-              id="city"
+              id="phone"
               maxLength={35}
-              name="city"
-              value={city}
+              name="phone"
+              value={phone}
               onChange={handleChange}
-              required
+               
               type="text"
-              placeholder=""
-              />
-              <label className="FormLabel2" htmlFor="city">
-                City
-              </label>
-          </div>
-        
-          <div className="flex flex-col gap-2">
+              placeholder="+00123456789"/>
+            </div>
 
-          <input
+            {/* email */}
+            <div className="form_area">
+              <label className="FormLabel" htmlFor="email">
+                Email
+              </label>
+              <input
+                className="FormInput"
+                id="email"
+                maxLength={35}
+                name="email"
+                value={email}
+                onChange={handleChange}
+                 
+                type="email" 
+                placeholder="youremail@email.com"
+                />
+            </div>        
+
+          {/* gender */}
+          <fieldset className="form_radio_row">
+            <legend className="FormLabel w-full">Gender</legend>
+            <input type="radio" name="gender" id="male_radio" value="male" onChange={handleChange}/><label htmlFor="male_radio">Male</label><br />
+            <input type="radio" name="gender" id="female_radio" value="female"  onChange={handleChange}/><label htmlFor="female_radio">Female</label>
+          </fieldset>
+
+          {/* Languages */}
+          <div className="form_area">
+            <label className="FormLabel" htmlFor="languages">
+              Languages fluently spoken in addition to English
+            </label>
+            <input
             className="FormInput"
-            id="state"
-            maxLength={35}
-            name="state"
-            value={state}
-            onChange={handleChange}
-            required
             type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyPress}
+            placeholder="Type a language and press space"
+            />
+            <div className="mt-[10px] flex flex-row gap-[1rem] flex-wrap">
+              {emailBody.languages.map((language, index) => (
+                <span
+                  key={index}
+                  className="relative inline-block px-3 py-1 bg-gray-200 text-gray-800 rounded-md"
+
+                >
+                  {language}
+                  <button
+                    onClick={() => handleRemoveLanguage(language)}
+                    className="absolute top-[-7px] right-[-7px] accent2-bg
+                    text-white rounded-full w-5 h-5 flex items-center justify-center text-sm"
+                  >
+                    &times;
+                  </button>
+                </span>
+              ))}
+            </div>
+          </div>
+          {/* //////////////////////////////////////////////////////////////////////////////////// */}
+
+          </div>
+
+          {/* //////////////////////////////////////////////////////////////////////////////////// */}
+          {/* address */}
+          <div className="form_section">
+            
+            <h2 className="FormLabel">Address</h2>
+
+            <div className="form_area">
+            {/* Line 1 */}
+            <label className="FormLabel2" htmlFor="address_Line1">
+              Street Address
+            </label>
+            <input
+              className="FormInput"
+              id="Address_Line1"
+              maxLength={35}
+              name="address_Line1"
+              value={address_Line1}
+              onChange={handleChange}
+               
+              type="text" 
+              placeholder=""
+            />
+
+            </div>
+
+            <div className="form_area">
+            {/* Line 2 */}
+            <label className="FormLabel2" htmlFor="address_Line2">
+              Street Address Line 2
+            </label>
+            <input
+            className="FormInput"
+            id="Address_Line2"
+            maxLength={35}
+            name="address_Line2"
+            value={address_Line2}
+            onChange={handleChange}
+             
+            type="text" 
             placeholder=""
             />
-            <label className="FormLabel2" htmlFor="state">
-              State
-            </label>
+
             </div>
 
+            {/* City , State */}
+            <div className="form_area_x3">
 
-        </div>
+              <div className="form_area">
+              <label className="FormLabel2" htmlFor="city">
+                    City
+                  </label>
+                <input
+                  className="FormInput"
+                  id="city"
+                  maxLength={35}
+                  name="city"
+                  value={city}
+                  onChange={handleChange}
+                   
+                  type="text"
+                  placeholder=""
+                  />
 
+              </div>
+            
+              <div className="form_area">
+              <label className="FormLabel2" htmlFor="state">
+                  State
+                </label>
+                <input
+                  className="FormInput"
+                  id="state"
+                  maxLength={35}
+                  name="state"
+                  value={state}
+                  onChange={handleChange}
+                   
+                  type="text"
+                  placeholder=""
+                  />
 
-      </div>
+              </div>
 
-      {/* Languages */}
-      <div className="flex flex-col gap-2">
-        <label className="FormLabel" htmlFor="languages">
-          Languages fluently spoken in addition to English
-        </label>
-        <input
-          className="FormInput"
-          id="languages"
-          maxLength={35}
-          name="languages"
-          value={languages}
-          onChange={handleChange}
-          required
-          type="text" 
-          placeholder=""
-          />
-      </div>
+              <div className="form_area">
+              <label className="FormLabel2" htmlFor="code">
+                  State
+                </label>
+                <input
+                  className="FormInput"
+                  id="code"
+                  maxLength={35}
+                  name="code"
+                  value={code}
+                  onChange={handleChange}
+                   
+                  type="text"
+                  placeholder=""
+                  />
 
-      {/* Emergency person */}
-      <div className="flex flex-col gap-2  ">
-
-        <label className="FormLabel" htmlFor="emergency_firstname">
-          Emergency Contact person
-        </label>
-
-        <div className="flex flex-row gap-[2rem]">
-          <input
-            className="FormInput"
-            id="emergency_firstname"
-            maxLength={35}
-            name="emergency_firstname"
-            value={emergency_firstname}
-            onChange={handleChange}
-            required
-            type="text"
-            placeholder="First Name"
-            />
-
-          <input
-            className="FormInput"
-            id="emergency_lastname"
-            maxLength={35}
-            name="emergency_lastname"
-            value={emergency_lastname}
-            onChange={handleChange}
-            required
-            type="text"
-            placeholder="Last Name"
-            />
-
-        </div>
-
-        {/* Emergency phone */}
-        <div className="flex flex-col gap-2 ">
-          <label className="FormLabel" htmlFor="emergency_phone">
-          Emergency Phone Number
-          </label>
-          <input
-            className="FormInput"
-            id="emergency_phone"
-            maxLength={35}
-            name="emergency_phone"
-            value={emergency_phone}
-            onChange={handleChange}
-            required
-            type="text"
-            placeholder="+00123456789"/>
-        </div>
-      </div>
+              </div>
+            </div>
+          </div>
 
 
 
-      {/* //////////////////////////////////////////////////////////////////////////////////// */}
-      <div className=" ">
+          {/* //////////////////////////////////////////////////////////////////////////////////// */}
+          <div className="form_section">
+            <h2 className="FormLabel">Your Preferences</h2>
 
-        {/* position */}
-        <div className="flex flex-row gap-2 flex-wrap">
-          <h3 className="FormLabel w-full">What position are you applying for?</h3>
+            {/* position */}
+            <div className="form_area">
+              <h3 className="FormLabel w-full">What position are you applying for?</h3>
+              
+              <div className="flex flex-col gap-2">
+
+                <div className="flex flex-row gap-2">
+                  <input onChange={handleCheckboxChange}
+                  type="checkbox" name="position" id="pos_ban_server" value="Banquet Server" /><label htmlFor="pos_ban_server">Banquet Server</label>
+                </div>
+
+                <div className="flex flex-row gap-2">
+                  <input onChange={handleCheckboxChange}
+                  type="checkbox" name="position" id="pos_bar" value="Bartender"  /><label htmlFor="pos_bar">Bartender</label>
+                </div>
+
+                <div className="flex flex-row gap-2">
+                  <input onChange={handleCheckboxChange}
+                  type="checkbox" name="position" id="pos_kit" value="Kitchen Helper"  /><label htmlFor="pos_kit">Kitchen Helper</label>
+                </div>
+
+                <div className="flex flex-row gap-2">
+                  <input onChange={handleCheckboxChange}
+                  type="checkbox" name="position" id="pos_ban_captain" value="Banquet Captain"  /><label htmlFor="pos_ban_captain">Banquet Captain</label>
+                </div>
+
+              </div>
+            </div>
+
+            {/* availability */}
+            <div className="form_area">
+              <h3 className="FormLabel w-full">What days and times are you available to work?</h3>
+              
+              <div className="flex flex-col gap-2">
+
+                <div className="flex flex-row gap-2">
+                  <input onChange={handleCheckboxChange}
+                  type="checkbox" name="desired_days" id="av_mon" value="Monday" /><label htmlFor="av_mon">Monday</label>
+                </div>
+
+                <div className="flex flex-row gap-2">
+                  <input onChange={handleCheckboxChange}
+                  type="checkbox" name="desired_days" id="av_tues" value="Tuesday"  /><label htmlFor="av_tues">Tuesday</label>
+                </div>
+
+                <div className="flex flex-row gap-2">
+                  <input onChange={handleCheckboxChange}
+                  type="checkbox" name="desired_days" id="av_wed" value="Wednesday"  /><label htmlFor="av_wed">Wednesday</label>
+                </div>
+
+                <div className="flex flex-row gap-2">
+                  <input onChange={handleCheckboxChange}
+                  type="checkbox" name="desired_days" id="av_thurs" value="Thursday"  /><label htmlFor="av_thurs">Thursday</label>
+                </div>
+
+                <div className="flex flex-row gap-2">
+                  <input onChange={handleCheckboxChange}
+                  type="checkbox" name="desired_days" id="av_fri" value="Friday"  /><label htmlFor="av_fri">Friday</label>
+                </div>
           
-          <div className="flex flex-col gap-2">
+                <div className="flex flex-row gap-2">
+                  <input onChange={handleCheckboxChange}
+                  type="checkbox" name="desired_days" id="av_sat" value="Saturday"  /><label htmlFor="av_sat">Saturday</label>
+                </div>
 
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="position" id="pos_ban_server" value="yes" /><label htmlFor="pos_ban_server">Banquet Server</label>
+                <div className="flex flex-row gap-2">
+                  <input onChange={handleCheckboxChange}
+                  type="checkbox" name="desired_days" id="av_sun" value="Sunday"  /><label htmlFor="av_sun">Sunday</label>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <div className="form_section">
+            <h2 className="FormLabel">More about you</h2>
+
+            {/* Emergency person */}
+            <div className="form_area">
+
+              <label className="FormLabel" htmlFor="emergency_firstname">
+                Emergency Contact person
+              </label>
+
+              <div className="form_row">
+                <input
+                  className="FormInput2"
+                  id="emergency_firstname"
+                  maxLength={35}
+                  name="emergency_firstname"
+                  value={emergency_firstname}
+                  onChange={handleChange}
+                   
+                  type="text"
+                  placeholder="First Name"
+                  />
+
+                <input
+                  className="FormInput2"
+                  id="emergency_lastname"
+                  maxLength={35}
+                  name="emergency_lastname"
+                  value={emergency_lastname}
+                  onChange={handleChange}
+                   
+                  type="text"
+                  placeholder="Last Name"
+                  />
+
+              </div>
+
+              {/* Emergency phone */}
+              <div className="flex flex-col gap-2 ">
+                <label className="FormLabel" htmlFor="emergency_phone">
+                Emergency Phone Number
+                </label>
+                <input
+                  className="FormInput"
+                  id="emergency_phone"
+                  maxLength={35}
+                  name="emergency_phone"
+                  value={emergency_phone}
+                  onChange={handleChange}
+                   
+                  type="text"
+                  placeholder="+00123456789"/>
+              </div>
             </div>
 
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="position" id="pos_bar" value="no"  /><label htmlFor="pos_bar">Bartender</label>
+            {/* //////////////////////////////////////////////////////////////////////////////////// */}
+            {/* secondJob */}
+
+            <div className="form_area">
+              <fieldset className="">
+                <legend className="FormLabel w-full">Do you have a second job or other commitments that would interfer while working with Way To Go?</legend>
+                <div className="form_radio_row">
+                  <div className="flex flex-row gap-2">
+                    <input onChange={handleChange}
+                    type="radio" name="secondJob" id="secondJob_yes" value="yes" /><label htmlFor="secondJob_yes">Yes</label>
+                  </div>
+
+                  <div className="flex flex-row gap-2">
+                    <input onChange={handleChange}
+                    type="radio" name="secondJob" id="secondJob_no" value="no"  /><label htmlFor="secondJob_no">No</label>
+                  </div>
+
+                  <div className="flex flex-row gap-2">
+                    <input onChange={handleChange}
+                    type="radio" name="secondJob" id="secondJob_other" value="other"  /><label htmlFor="secondJob_other">Other</label>
+                  </div>
+
+                </div>
+              </fieldset>
+
+
+              {/* experience */}
+              <fieldset className="flex flex-row gap-2 flex-wrap">
+                <legend className="FormLabel w-full">Do you have any experience in catering or serving?</legend>
+                <div className="form_radio_row">
+                  <div className="flex flex-row gap-2">
+                    <input onChange={handleChange}
+                    type="radio" name="experience" id="experience_yes" value="yes" /><label htmlFor="experience_yes">Yes</label>
+                  </div>
+
+                  <div className="flex flex-row gap-2">
+                    <input onChange={handleChange}
+                    type="radio" name="experience" id="experience_no" value="no"  /><label htmlFor="experience_no">No</label>
+                  </div>
+                </div>
+              </fieldset>
+
+              {/* exp field */}
+              <div className="flex flex-col gap-2 flex-wrap">
+                <label className="FormLabel" htmlFor="experience_field">
+                  If yes, please write a few sentences about your recent job experiences.
+                </label>
+
+                  <textarea
+                  className="border-0 FormInput h-full min-w-full py-2 resize-none"
+                  name="experience_field"
+                  value={experience_field}
+                  onChange={handleChange}
+                   
+                  id="experience_field"
+                  cols={3}
+                  rows={5}
+                  placeholder="describe your inquiry"
+                  >
+
+                  </textarea>
+
+              </div>
             </div>
 
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="position" id="pos_kit" value="other"  /><label htmlFor="pos_kit">Kitchen Helper</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="position" id="pos_ban_captain" value="other"  /><label htmlFor="pos_ban_captain">Banquet Captain</label>
-            </div>
 
           </div>
+
+
+          <div className="form_section">
+            {/* //////////////////////////////////////////////////////////////////////////////////// */}
+            {/* other questions */}
+            <h2 className="FormLabel">More about you</h2>
+
+            {/* documents */}
+              <fieldset className="form_area">
+                <legend className="FormLabel w-full">Would you be able to provide legal work documents if chosen for hire? (SSN, ITIN#, etc)</legend>
+
+                <div className="flex flex-row gap-2">
+                  <input type="radio" name="documents" id="documents_yes" value="yes" onChange={handleChange}/><label htmlFor="documents_yes">Yes</label>
+                </div>
+
+                <div className="flex flex-row gap-2">
+                <input type="radio" name="documents" id="documents_no" value="no"  onChange={handleChange}/><label htmlFor="documents_no">No</label>
+                </div>
+
+              </fieldset>
+
+              {/* drive */}
+              <fieldset className="form_area">
+                <legend className="FormLabel w-full">Would you be willing to drive other co-workers to and from the venues?</legend>
+
+                <div className="flex flex-row gap-2">
+                  <input type="radio" name="drive" id="drive_yes" value="yes" onChange={handleChange}/><label htmlFor="drive_yes">Yes</label>
+                </div>
+
+                <div className="flex flex-row gap-2">
+                <input type="radio" name="drive" id="drive_no" value="no"  onChange={handleChange}/><label htmlFor="drive_no">No</label>
+                </div>
+
+              </fieldset>
+
+              {/* referral */}
+              <div className="form_area">
+                <h3 className="FormLabel w-full">How did you hear about us? Were you referred by someone who works here?</h3>
+                
+                <div className="flex flex-col gap-2">
+
+                  <div className="flex flex-row gap-2">
+                    <input onChange={handleCheckboxChange}
+                    type="checkbox" name="referral" id="ref_sm" value="social media" /><label htmlFor="ref_sm">Social Media</label>
+                  </div>
+
+                  <div className="flex flex-row gap-2">
+                    <input onChange={handleCheckboxChange}
+                    type="checkbox" name="referral" id="ref_in" value="indeed"  /><label htmlFor="ref_in">Indeed</label>
+                  </div>
+
+                  <div className="flex flex-row gap-2">
+                    <input onChange={handleCheckboxChange}
+                    type="checkbox" name="referral" id="ref_web" value="website/online search"  /><label htmlFor="ref_web">Website/Online Search</label>
+                  </div>
+
+                  <div className="flex flex-row gap-2">
+                    <input onChange={handleCheckboxChange}
+                    type="checkbox" name="referral" id="ref_walk" value="walk-in"  /><label htmlFor="ref_walk">Walk-in</label>
+                  </div>
+
+                  <div className="flex flex-row gap-2">
+                    <input onChange={handleCheckboxChange}
+                    type="checkbox" name="referral" id="ref_ref" value="referrals"  /><label htmlFor="ref_ref">Referrals</label>
+                  </div>
+            
+
+                </div>
+              </div>
+
+              {/* phone */}
+              <div className="form_area">
+                
+                <label className="FormLabel" htmlFor="referral_name">
+                  If Referred by someone, Write their name below
+                </label>
+                <input
+                  className="FormInput"
+                  id="referral_name"
+                  maxLength={35}
+                  name="referral_name"
+                  value={referral_name}
+                  onChange={handleChange}
+                   
+                  type="text"
+                  placeholder=""/>
+              </div>
+            </div>
+
+
+            <button type="submit" className="">
+              Submit
+            </button>
         </div>
+    
 
-        {/* availability */}
-        <div className="flex flex-row gap-2 flex-wrap">
-          <h3 className="FormLabel w-full">What days and times are you available to work?</h3>
-          
-          <div className="flex flex-col gap-2">
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="availability" id="av_mon" value="yes" /><label htmlFor="av_mon">Monday</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="availability" id="av_tues" value="no"  /><label htmlFor="av_tues">Tuesday</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="availability" id="av_wed" value="other"  /><label htmlFor="av_wed">Wednesday</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="availability" id="av_thurs" value="other"  /><label htmlFor="av_thurs">Thursday</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="availability" id="av_fri" value="other"  /><label htmlFor="av_fri">Friday</label>
-            </div>
-      
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="availability" id="av_sat" value="other"  /><label htmlFor="av_sat">Saturday</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="availability" id="av_sun" value="other"  /><label htmlFor="av_sun">Sunday</label>
-            </div>
-
-          </div>
-        </div>
       </div>
-
-      {/* //////////////////////////////////////////////////////////////////////////////////// */}
-      {/* secondJob */}
-
-      <div className="  flex flex-col gap-2">
-        <fieldset className="flex flex-row gap-2 flex-wrap">
-          <legend className="FormLabel w-full">Do you have a second job or other commitments that would interfer while working with Way To Go?</legend>
-          <div className="flex flex-col gap-2">
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="radio" name="secondJob" id="secondJob_yes" value="yes" /><label htmlFor="secondJob_yes">Yes</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="radio" name="secondJob" id="secondJob_no" value="no"  /><label htmlFor="secondJob_no">No</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="radio" name="secondJob" id="secondJob_other" value="other"  /><label htmlFor="secondJob_other">Other</label>
-            </div>
-
-          </div>
-        </fieldset>
-
-
-        {/* experience */}
-        <fieldset className="flex flex-row gap-2 flex-wrap">
-          <legend className="FormLabel w-full">Do you have any experience in catering or serving?</legend>
-          <div className="flex flex-col gap-2">
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="radio" name="experience" id="experience_yes" value="yes" /><label htmlFor="experience_yes">Yes</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="radio" name="experience" id="experience_no" value="no"  /><label htmlFor="experience_no">No</label>
-            </div>
-          </div>
-        </fieldset>
-
-        {/* exp field */}
-        <div className="flex flex-col gap-2 flex-wrap h-[300px]">
-          <label className="FormLabel" htmlFor="experience_field">
-            If yes, please write a few sentences about your recent job experiences.
-          </label>
-
-            <textarea
-            className="border-0 FormInput h-full w-full py-2 resize-none"
-            name="experience_field"
-            value={experience_field}
-            onChange={handleChange}
-            required
-            id="experience_field"
-            cols={3}
-            rows={5}
-            placeholder="describe your inquiry"
-            >
-
-            </textarea>
-
-        </div>
-      </div>
-
-
-      {/* //////////////////////////////////////////////////////////////////////////////////// */}
-      {/* other questions */}
-      <div className="  flex flex-col gap-2">
-      {/* documents */}
-        <fieldset className="flex flex-col gap-2 flex-wrap">
-          <legend className="FormLabel w-full">Would you be able to provide legal work documents if chosen for hire? (SSN, ITIN#, etc)</legend>
-
-          <div className="flex flex-row gap-2">
-            <input type="radio" name="documents" id="documents_yes" value="yes" onChange={handleChange}/><label htmlFor="documents_yes">Yes</label>
-          </div>
-
-          <div className="flex flex-row gap-2">
-           <input type="radio" name="documents" id="documents_no" value="no"  onChange={handleChange}/><label htmlFor="documents_no">No</label>
-          </div>
-
-        </fieldset>
-
-        {/* drive */}
-        <fieldset className="flex flex-col gap-2 flex-wrap">
-          <legend className="FormLabel w-full">Would you be willing to drive other co-workers to and from the venues?</legend>
-
-          <div className="flex flex-row gap-2">
-            <input type="radio" name="drive" id="drive_yes" value="yes" onChange={handleChange}/><label htmlFor="drive_yes">Yes</label>
-          </div>
-
-          <div className="flex flex-row gap-2">
-           <input type="radio" name="drive" id="drive_no" value="no"  onChange={handleChange}/><label htmlFor="drive_no">No</label>
-          </div>
-
-        </fieldset>
-
-        {/* referral */}
-        <div className="flex flex-row gap-2 flex-wrap">
-          <h3 className="FormLabel w-full">How did you hear about us? Were you referred by someone who works here?</h3>
-          
-          <div className="flex flex-col gap-2">
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="referral" id="ref_sm" value="social media" /><label htmlFor="ref_sm">Social Media</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="referral" id="ref_in" value="indeed"  /><label htmlFor="ref_in">Indeed</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="referral" id="ref_web" value="website/online search"  /><label htmlFor="ref_web">Website/Online Search</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="referral" id="ref_walk" value="walk-in"  /><label htmlFor="ref_walk">Walk-in</label>
-            </div>
-
-            <div className="flex flex-row gap-2">
-              <input onChange={handleChange}
-              type="checkbox" name="referral" id="ref_ref" value="referrals"  /><label htmlFor="ref_ref">Referrals</label>
-            </div>
-      
-
-          </div>
-        </div>
-
-        {/* phone */}
-        <div className="flex flex-col gap-2">
-          <label className="FormLabel" htmlFor="referral_name">
-            If Referred by someone, Write their name below
-          </label>
-          <input
-            className="FormInput"
-            id="referral_name"
-            maxLength={35}
-            name="referral_name"
-            value={referral_name}
-            onChange={handleChange}
-            required
-            type="text"
-            placeholder=""/>
-        </div>
-
-      </div>
-
-      <button className="accent1-bg px-2 py-2 w-[300px] rounded-full mt-[3rem] mx-auto">
-        Submit
-      </button>
-
-    </div>
 
 
     </form>
