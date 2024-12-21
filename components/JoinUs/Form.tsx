@@ -37,7 +37,9 @@ interface EmailBody {
 
 // form images
 // form browser errors
-// 
+// placeholders
+// required attr
+
 const Form = () => {
 
   const images = [
@@ -57,8 +59,8 @@ const Form = () => {
   email: "",
   gender: "",                // male, female
 
-  address_Line1: "1",
-  address_Line2: "2",
+  address_Line1: "",
+  address_Line2: "",
   city: "",
   state: "",
   code: "",                 // zip code number
@@ -177,30 +179,31 @@ const Form = () => {
 
 
       {/* small view port header */}
-      <div className="px-[1rem] mb-[-1rem] vp4:hidden">
+      {/* <div className="px-[1rem] mb-[-1rem] vp4:hidden">
         <h1 className="heading1">Join our team</h1>
         <p className="f_rale text-[min(calc(0.75rem+2.5vw),44px)] ">Let us make a difference</p>
-      </div>
+      </div> */}
 
-      <div className="flex flex-col vp4:flex-row gap-[3rem]">
+      <div className="flex flex-col vp5:flex-row gap-[3rem] w-full">
         
         {/* larger view port header and image slider */}
-        <div className="vp4:flex-1 order-2 vp4:h-[85vh] vp4:sticky top-[12%] vp4:border hidden 
-        vp4:flex flex-col accent2-bg text-white rounded-[10px] overflow-hidden
+        <div className="vp5:flex-1 vp5:order-2 h-[40vw] vp5:h-[85vh] vp5:sticky vp5:top-[12%]
+        flex flex-col accent2-bg text-white rounded-[10px] overflow-hidden relative
+        max-w-[550px] vp5:max-w-auto w-full mx-auto max-h-[272px] vp5:max-h-max
         ">
           <div className="absolute px-[2rem] pt-[1rem] z-[1] w-full h-full"
            style={{
             background: "linear-gradient(160deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 21%, rgba(255,255,255,0) 100%)"
           }}>
             <h1 className="heading2">Join our team</h1>
-            <p className="f_rale text-[min(calc(0.75rem+1vw),35px)] ">Let us make a difference</p>
+            <p className="f_rale text-[min(calc(0.75rem+2vw),35px) vp5:text-[min(calc(0.75rem+1vw),35px)] ">Let us make a difference</p>
           </div>
 
             <ImageSlider images={images}/>
         </div>
 
         {/* form sections */}
-        <div className="flex flex-col gap-[3rem] mx-auto order-1">
+        <div className="flex flex-col gap-[3rem] mx-auto order-1 mt-[-1rem] vp5:mt-0">
           <div className="form_section">
             <h2 className="FormLabel">Personal Information</h2>
             {/* //////////////////////////////////////////////////////////////////////////////////// */}
@@ -420,7 +423,7 @@ const Form = () => {
 
               <div className="form_area">
               <label className="FormLabel2" htmlFor="code">
-                  State
+                  Zip code
                 </label>
                 <input
                   className="FormInput"
@@ -647,7 +650,7 @@ const Form = () => {
           <div className="form_section">
             {/* //////////////////////////////////////////////////////////////////////////////////// */}
             {/* other questions */}
-            <h2 className="FormLabel">More about you</h2>
+            <h2 className="FormLabel">More Information</h2>
 
             {/* documents */}
               <fieldset className="form_area">

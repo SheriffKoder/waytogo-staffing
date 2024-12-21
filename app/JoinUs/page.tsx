@@ -7,7 +7,7 @@ const page = () => {
     <div className='min-h-[calc(100vh-100px)] w-full pt-[7rem]
     vp3:px-[1rem]'>
 
-        <FormModal/>
+    <FormModal/>
       <Form/>
 
     </div>

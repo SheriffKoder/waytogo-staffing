@@ -46,10 +46,10 @@ const section2_cards = {
 
 
 const nav_links = [
-    { text: "About", href: "#about", aria: "More about WayToGo" },
+    { text: "About", href: "/#about", aria: "More about WayToGo" },
     // { text: "Measures", href: "#measures", aria: "our achievements"},
-    { text: "Events", href: "#events", aria: "Events we are experienced in" },
-    { text: "Services", href: "#services", aria: "Services we offer" },
+    { text: "Events", href: "/#events", aria: "Events we are experienced in" },
+    { text: "Services", href: "/#services", aria: "Services we offer" },
     { text: "Careers", href: "/JoinUs", aria: "Work with us" },
 
   ]
