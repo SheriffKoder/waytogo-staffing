@@ -6,6 +6,7 @@ import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
 import { allText } from '@/constants';
 import Link from 'next/link';
 import Tilt from 'react-parallax-tilt';
+import CalendarButton from '@/components/GoogleCalendar/CalendarButton'
 
 
 const Hero = () => {
@@ -178,15 +179,13 @@ const Hero = () => {
                     </span>
                 </p>
 
-                <div className='flex flex-row gap-2 justify-center w-full vp3:justify-start mt-[1rem]'>
-                    <button className='accent1-bg rounded-full paragraph1 px-4 py-2 vp4:px-6 vp4:py-2 text-white
-                    focus:outline-[#A58964] hover:outline-[#A58964] trans1 outline-transparent outline outline-2 outline-offset-2
-                    focus:bg-[#9b795d] hover:bg-[#9b795d]'>
-                        <Link href="/">
-                            Request a Consultation
-                        </Link>
-                    </button>
-
+                <div className="flex flex-col vp4:flex-row gap-2 justify-center w-full vp3:justify-start">
+                    <CalendarButton 
+                        targetId='hero-calendar'
+                        className='accent1-bg rounded-full paragraph1 px-4 py-2 vp4:px-4 vp4:py-2 text-white
+                        focus:outline-[#A58964] hover:outline-[#9b795d] trans1 outline-transparent outline outline-2 outline-offset-4
+                        cursor-pointer'
+                    />
                     <button className='accent2-bg text-white rounded-full paragraph1 px-4 py-2 vp4:px-6 vp4:py-2
                     focus:outline-[#13162e] hover:outline-[#13162e] trans1 outline-transparent outline outline-2 outline-offset-4
                     focus:bg-[#13162e] hover:bg-[#13162e]'>
@@ -229,12 +228,11 @@ const Hero = () => {
             {/* box container */}
             <div className='w-full zoomContainer sticky flex items-center 
             justify-center top-[95vh] vp4:top-[90vh]'>
-                <div className='zoomBox h-[20vw] w-[40vw] rounded-[20px] 
-                ' id="hero_bg"
-                style={{
-                    backgroundImage: `url(${allText.hero.image})`,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat"                    
+                <div className='zoomBox h-[20vw] w-[40vw] rounded-[20px]' id="hero_bg"
+                    style={{
+                        backgroundImage: `url(${allText.hero.image})`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
                     }}>
                 </div>
             </div>

@@ -39,6 +39,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet" />
+        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+      </head>
       <body className={`${OggRegular.variable} ${OggMed.variable}`}
       >
 
@@ -49,7 +53,7 @@ export default function RootLayout({
         {children}
         </ScrollContext>
 
-      <footer className="h-[400px] relative flex-c-c">
+      <footer className="h-[200px] relative flex-c-c">
         <Footer/>
       </footer>
 

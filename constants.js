@@ -5,7 +5,7 @@ const allText = {
         paragraph: "Staffing Agency - the way to go, join us. Staffing Agency - the way to go, join us",
         image: "images/hero/hero.jpeg",
         cardImage1: "images/hero/card1.jpeg",
-        cardImage2: "https://media.istockphoto.com/id/1268392517/photo/restaurant-manager-and-his-staff-in-terrace-interacting-to-head-chef-in-restaurant.jpg?s=1024x1024&w=is&k=20&c=EZx4lUITmVsdUHshy5cTP8YirbW_F2bY880XGObz_n8=",
+        cardImage2: "images/hero/card2.jpeg",
     },
     section2: {
         header: "The Value We Bring",
@@ -26,34 +26,32 @@ const allText = {
         paragraph: "Our extensively trained staff consistently elevate every event, going above and beyond to ensure each experience is exceptional.",
     },
     section6: {
-        image: "https://media.istockphoto.com/id/1198944463/photo/i-hope-youll-like-you-coffee.jpg?s=2048x2048&w=is&k=20&c=mMHzgmMTB9p2ibc68QNRepFevJnN_LHWUyMTf8et3Uc=",
+        image: "images/partner-with-us.jpeg",
         header: "Partner with WayToGo Staffing",
         paragraph: "Your solution to seamless and reliable staffing.",
     }
 }
 
+const nav_links = [
+    { text: "About", href: "/#about", aria: "More about WayToGo" },
+    { text: "Events", href: "/#events", aria: "Events we are experienced in" },
+    { text: "Services", href: "/#services", aria: "Services we offer" },
+    { text: "Careers", href: "/join-us", aria: "Work with us" },
+]
+
+// the value we bring
 const section2_cards = {
     card1: {
         header: "Our Rating",
         paragraph: "Trusted with providing excellent service",
     },
     card2: {
-        about: "An about us page isn't just where you share the story of your brand. It's also where you tell your customer what you do for them and how you work to meet their needs in that area.",
         mission: "To provide exceptional, tailored staffing solutions that elevate every event, ensuring seamless service, guest satisfaction, and unforgettable experiences.",
         vision: "To be the leading choice for event staffing, renowned for excellence, reliability, and transforming moments into cherished memories through outstanding service.",
     }
 }
 
-
-const nav_links = [
-    { text: "About", href: "/#about", aria: "More about WayToGo" },
-    // { text: "Measures", href: "#measures", aria: "our achievements"},
-    { text: "Events", href: "/#events", aria: "Events we are experienced in" },
-    { text: "Services", href: "/#services", aria: "Services we offer" },
-    { text: "Careers", href: "/JoinUs", aria: "Work with us" },
-
-  ]
-
+// what we do
 const sectionThree_cards = [
     {
         header: "Country Clubs",
@@ -98,6 +96,7 @@ const sectionThree_cards = [
 
 ]
 
+// why choose us
 const sectionFour_contents = [
     {
         header: "Rigorous Candidate Screening",
@@ -127,13 +126,14 @@ const sectionFour_contents = [
         header: "Complimentary On-Site Training",
         paragraph: "We provide on-site training at no additional cost to align with your unique style of service and deliver a seamless guest experience.",
     },
-    // {
-    //     header: "Fully Compliant with Labor Laws",
-    //     paragraph: "We adhere to all local, state, and federal labor laws, ensuring that all staff are properly compensated and treated with fairness and respect.",
-    // },
+    {
+        header: "Fully Compliant",
+        paragraph: "We adhere to all local, state, and federal labor laws, ensuring that all staff are properly compensated and treated with fairness and respect.",
+    },
 
 ]
 
+// our services
 const sectionFive_cards = [
     {
         header: "Banquet Server",
@@ -232,4 +232,4 @@ module.exports = {
     sectionThree_cards,
     sectionFour_contents,
     sectionFive_cards
-  }
+}
