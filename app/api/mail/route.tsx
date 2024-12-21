@@ -16,8 +16,12 @@ export const POST = async (req:Request) => {
         const emailBody = await req.json();
         console.log(emailBody);
 
-      
-        
+        // send post request to the email service
+        const apiUrl = "https://script.google.com/macros/s/AKfycbwmDZZL44q7hHt06GLK3VNYZsjri0cAreOudItTJ58-v0zF0lc65gUCOXZta2t1I_0/exec";
+        await fetch(apiUrl, {
+            method: "POST",
+            body: JSON.stringify(emailBody),
+        });      
 
         // 200: operation succeeded
         return new Response(JSON.stringify("Email Sent"), {status: 200});
