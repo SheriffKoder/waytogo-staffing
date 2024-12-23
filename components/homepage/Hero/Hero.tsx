@@ -27,7 +27,7 @@ const Hero = () => {
 
         // parallax effect for text
         gsap.to(".parallax1", {
-            yPercent: window.innerWidth < 520 ? -320 : -60,
+            yPercent: window.innerWidth < 520 ? -320 : -80,
             ease: "none",
             scrollTrigger: {
                 trigger: ".zoomWrapper",
@@ -128,7 +128,7 @@ const Hero = () => {
                 start: "top top",
                 end: "bottom bottom",
                 scrub: true,
-                }
+                },
         })
 
         // move also its container to the top of the page in the same time
@@ -236,7 +236,7 @@ const Hero = () => {
                     style={{
                         // backgroundImage: `url(${allText.hero.mainImage})`,
                         background: `linear-gradient(12deg, rgba(165, 157, 143, 1) 0%, rgba(150, 142, 129, 0.0) 100%), url(${allText.hero.mainImage})`,
-                        backgroundPosition: "30%",
+                        backgroundPosition: "35%",
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",
                     }}>
@@ -245,7 +245,7 @@ const Hero = () => {
            
 
             <div className='bottom-[40vw] vp2:bottom-[-5rem] vp3:bottom-[-10vw] vp4:bottom-[-10vw] vp5:bottom-[-4vw] 
-            vp6:bottom-[-11vw] absolute flex-c-c w-full'>
+            vp6:bottom-[-9vw] absolute flex-c-c w-full'>
                 <div className='pb-[0rem] vp4:px-[4rem] parallaxPara
                 paragraph3 flex justify-center vp3:justify-start vp3:pl-[2rem]'>
 {/* text_shadow_white */}
