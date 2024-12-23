@@ -159,13 +159,13 @@ const Hero = () => {
 
 
             {/* // section's text w parallax */}
-            <div className='sticky top-[60%] vp2:top-[60%] vp3:top-[35%] parallax1 z-[2] max-w-[1400px] px-[2rem]
+            <div className='sticky top-[65%] vp2:top-[65%] vp3:top-[35%] parallax1 z-[2] max-w-[1400px] px-[2rem]
             flex items-start justify-center flex-col textHero translate-y-[5rem] opacity-0
             vp4:px-[4rem] mx-auto'>
 
                 <h1 className='heading1 text_blend heroText text-center vp3:text-start w-full
                 flex flex-col'>
-                <span className=''>
+                <span className='text_shadow_white'>
                     WayToGo 
                 </span>
                 <span className='vp4:w-full'> Staffing</span>
