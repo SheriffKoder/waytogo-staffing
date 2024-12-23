@@ -582,3 +582,30 @@ input[type=checkbox], input[type=radio] {
   @apply pl-0
 }
 
+/* //////////////////////////////////////////////////////////////////////////// */
+/* // Loading spinner Form */
+.MrazloaderContainer {
+  /* width: 7rem; */
+  /* height: 7rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #5849c91f; */
+  /* border: 2px solid #382e82be; */
+  /* border-radius: 12px; */
+  /* backdrop-filter: blur(2px); */
+  /* -webkit-backdrop-filter: blur(2px); */
+}
+
+.Mrazloader-2 {
+  height: 1.5rem;
+  width: 1.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0.3rem solid;
+  border-color: #ffffff #f7f7f760;
+  animation: l1 1s infinite;
+}
+
+/* rotate 0.5turn */
+@keyframes l1 {to{transform: rotate(.5turn)}}

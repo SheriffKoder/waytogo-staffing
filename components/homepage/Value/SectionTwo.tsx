@@ -176,8 +176,8 @@ const SectionTwo = () => {
             background: `
             linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.90) 100%), url("${allText.section2.cardImage1}")
             `,
-            backgroundPosition: "top",
-            backgroundSize: "100%",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
             backgroundRepeat: "no-repeat"
             }}>
 

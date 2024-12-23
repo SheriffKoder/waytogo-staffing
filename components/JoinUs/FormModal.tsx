@@ -18,7 +18,7 @@ const FormModal = () => {
       };
 
   return (
-    <div className="sticky w-full max-w-[700px] h-[450px] z-[2] top-[50%] left-[50%]
+    <div className="mx-2 sticky w-full max-w-[700px] h-[450px] z-[2] top-[50%] left-[50%]
      accent1-light-bg rounded-[15px] box_shadow_light
     hidden flex-col gap-2 items-center justify-center text-center px-[2rem] vp4:translate-x-[-50%]
     " id="formModal">

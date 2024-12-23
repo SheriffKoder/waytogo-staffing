@@ -72,7 +72,8 @@ const Form = () => {
     },
   })
 
-  const [languageInput, setLanguageInput] = useState<string>("")
+  const [languageInput, setLanguageInput] = useState<string>("");
+  const [busy, setBusy] = useState(false);
 
   // Handle language input
   const handleLanguageKeyPress = (e: React.KeyboardEvent<HTMLInputElement>): void => {
@@ -104,6 +105,7 @@ const Form = () => {
   const onSubmit = async (data: FormValues) => {
     try {
       console.log(data);
+      setBusy(true);
       const res = await fetch("/api/mail", {
         method: "POST",
         body: JSON.stringify(data),
@@ -115,6 +117,7 @@ const Form = () => {
           modal.style.display = "flex"
           setTimeout(() => {
             modal.style.display = "none"
+            setBusy(false);
             redirect("/")
           }, 5000)
         }
@@ -653,8 +656,16 @@ const Form = () => {
           </div>
 
 
-          <button type="submit" className="">
-            Submit
+          <button type="submit" className={`${busy ? 'grayscale pointer-events-none' : ''}`} disabled={busy}>
+            
+            { busy ? 
+            (
+              <div className="MrazloaderContainer">
+              <div className="Mrazloader-2"></div>
+          </div>
+            ): (
+              "Submit"
+            )}
           </button>
         </div>
 

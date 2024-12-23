@@ -143,20 +143,20 @@ const sectionFive_cards = [
     {
         header: "Banquet Server",
         paragraph: "Friendly and professional servers skilled in delivering exceptional dining experiences for weddings, corporate events, and private gatherings.",
-        image: "/sectionFiveImages/1.jpg"
+        image: "/sectionFiveImages/1.png"
 
     },
     {
         header: "Kitchen Helper",
         paragraph: "Dependable staff to assist with meal preparation, cleaning, and maintaining an organized kitchen during busy periods.",
-        image: "/sectionFiveImages/2.jpg"
+        image: "/sectionFiveImages/2.png"
 
     },
 
     {
         header: "Banquet Captain",
         paragraph: "Experienced leaders who oversee banquet operations, ensuring flawless service and coordination of staff during events.",
-        image: "/sectionFiveImages/3.jpg"
+        image: "/sectionFiveImages/3.png"
 
     },
 
@@ -170,14 +170,14 @@ const sectionFive_cards = [
     {
         header: "Concession Stand Worker",
         paragraph: "Reliable team members adept at serving food, drinks, and handling transactions at stadiums, fairs, and other event venues.",
-        image: "/sectionFiveImages/5.jpg"
+        image: "/sectionFiveImages/5.png"
 
     },
 
     {
         header: "Line Cook",
         paragraph: "Skilled culinary professionals who can execute dishes efficiently, ensuring high-quality food service in kitchens of all sizes.",
-        image: "/sectionFiveImages/6.jpg"
+        image: "/sectionFiveImages/6.png"
 
     },
 
@@ -191,52 +191,52 @@ const sectionFive_cards = [
     {
         header: "Housekeeper",
         paragraph: "Meticulous staff focused on maintaining cleanliness and tidiness for hotels, resorts, and other establishments.",
-        image: "/sectionFiveImages/8.jpg"
+        image: "/sectionFiveImages/8.png"
 
     },
 
     {
         header: "Event Setup Crew",
         paragraph: "Detail-oriented staff skilled in setting up event spaces, including furniture arrangement, decorations, and technical equipment.",
-        image: "/sectionFiveImages/9.jpg"
+        image: "/sectionFiveImages/9.png"
 
     },
 
     {
         header: "Guest Service Representative",
         paragraph: "Polished customer-facing professionals offering exceptional service at front desks, events, and receptions.",
-        image: "/sectionFiveImages/10.jpg"
+        image: "/sectionFiveImages/10.png"
 
     },
 
     {
         header: "Event Security Staff",
         paragraph: "Responsible individuals who maintain order, safety, and guest satisfaction during events of any size.",
-        image: "/sectionFiveImages/11.jpg"
+        image: "/sectionFiveImages/11.png"
 
     },
 
     {
         header: "Event Manager",
         paragraph: "Experienced professionals to plan, oversee, and execute events, ensuring everything runs smoothly and meets expectations.",
-        image: "/sectionFiveImages/12.jpg"
+        image: "/sectionFiveImages/12.png"
 
     },
 
     {
         header: "General Laborer",
         paragraph: "Versatile staff who can assist with a wide range of tasks, including loading/unloading, venue setups, and logistics.",
-        image: "/sectionFiveImages/13.jpg"
+        image: "/sectionFiveImages/13.png"
     },
 ]
 
 // Form images
 const formImages = [
-    "/sectionFiveImages/1.jpg",
-    "/sectionFiveImages/2.jpg",
-    "/sectionFiveImages/3.jpg",
+    "/sectionFiveImages/1.png",
+    "/sectionFiveImages/2.png",
+    "/sectionFiveImages/3.png",
     "/sectionFiveImages/4.jpg",
-    "/sectionFiveImages/5.jpg",
+    "/sectionFiveImages/5.png",
   ];
 
 module.exports = {

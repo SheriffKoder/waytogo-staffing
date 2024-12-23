@@ -41,7 +41,7 @@ const SectionThree = () => {
   return (
     <div className='w-full h-full px-[0rem] pt-[5rem] relative' id="section3Container">
 
-    <h2 className="px-[2rem] pb-[min(calc(31rem-2vw),50rem)] vp4:pb-[min(calc(32rem-2vw),30rem)] 
+    <h2 className="px-[2rem] pb-[min(calc(31rem-2vw),50rem)] vp4:pb-[min(calc(32rem-2vw),100rem)] vp6:pb-[min(calc(66rem-5vw),50rem)] vp7:pb-[min(calc(100rem-10vw),62rem)]
     vp5:pb-[min(calc(32rem-2vw),26rem)] sticky z-[-1] bg-black text-white top-[6rem] vp4:px-[4rem] flex flex-row gap-4 heading1 items-center max-w-[2000px] mx-auto mb-[3rem]
     vp4:mb-0 sectionThreeHeading_container"
     style={{mixBlendMode: "difference"}}>
