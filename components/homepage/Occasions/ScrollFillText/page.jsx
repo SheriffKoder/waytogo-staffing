@@ -2,7 +2,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
 import React, { useRef } from 'react'
-import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
+import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
 
 import "./Navigation.css"
 // smooth scroll nav links and progress bars
@@ -12,7 +12,7 @@ const Tween = () => {
 
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    useGSAP(()=> {
+    useGSAP(() => {
 
         gsap.from(".zero-line", {
             scrollTrigger: {
@@ -24,10 +24,10 @@ const Tween = () => {
                 // pin: true,
             },
             translateX: "-100vw",
-            transformOrigin: "left center", 
+            transformOrigin: "left center",
             ease: "none"
         })
-        
+
         gsap.from(".one-line", {
             scrollTrigger: {
                 trigger: "#one",
@@ -38,7 +38,7 @@ const Tween = () => {
                 // pin: true,
             },
             translateX: "-100vw",
-            transformOrigin: "left center", 
+            transformOrigin: "left center",
             ease: "none"
         });
 
@@ -52,63 +52,63 @@ const Tween = () => {
                 // pin: true,
             },
             translateX: "-100vw",
-            transformOrigin: "left center", 
+            transformOrigin: "left center",
             ease: "none"
         });
 
 
-    },[]);
+    }, []);
 
-  return (
-    <>
-
-
+    return (
+        <>
 
 
-        {/* example on zero */}
-        <section id="zero" className="relative
+
+
+            {/* example on zero */}
+            <section id="zero" className="relative
         bg-black text-white w-auto
         ">
-            <span className=' zero-line absolute left-0 mask_nav_gsap
+                <span className=' zero-line absolute left-0 mask_nav_gsap
                 w-full h-full bg-[#4b1fdb]
                 flex items-center justify-center  text-white'>
                     {/* <span className="relative text-[10rem]">Hello world</span> */}
-            </span>
-            <div className="text">
-                We Are trying to be
-            </div>
-        </section>
+                </span>
+                <div className="text">
+                    We Are trying to be
+                </div>
+            </section>
 
-        {/* example on zero */}
-        <section id="one" className="relative
+            {/* example on zero */}
+            <section id="one" className="relative
         bg-black text-white w-auto
         ">
-            <span className=' one-line absolute left-0 mask_nav_gsap
+                <span className=' one-line absolute left-0 mask_nav_gsap
                 w-full h-full bg-[#4b1fdb]
                 flex items-center justify-center  text-white'>
                     {/* <span className="relative text-[10rem]">Hello world</span> */}
-            </span>
-            <div className="">
-            of web development and design
+                </span>
+                <div className="">
+                    of web development and design
 
-            </div>
-        </section>
+                </div>
+            </section>
 
-        <section id="two" className="relative
+            <section id="two" className="relative
         bg-black text-white w-auto
         ">
-            <span className=' two-line absolute left-0 mask_nav_gsap
+                <span className=' two-line absolute left-0 mask_nav_gsap
                 w-full h-full bg-[#4b1fdb]
                 flex items-center justify-center  text-white'>
                     {/* <span className="relative text-[10rem]">Hello world</span> */}
-            </span>
-            <div className="text">
-            the best in the field
-            </div>
-        </section>
-    
-    </>
-  )
+                </span>
+                <div className="text">
+                    the best in the field
+                </div>
+            </section>
+
+        </>
+    )
 }
 
 
@@ -118,33 +118,33 @@ const ScrollFillText = () => {
 
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    useGSAP(()=> {
+    useGSAP(() => {
 
-               // example 2
-               const textElements = gsap.utils.toArray('.textFill_text');
-        
-               textElements.forEach(text => {
-                   gsap.to(text, {
-                     backgroundSize: '100%',
-                     ease: 'none',
-                     scrollTrigger: {
-                       trigger: text,
-                       start: 'center 130%',
-                       end: 'center 70%',
-                       scrub: true,
+        // example 2
+        const textElements = gsap.utils.toArray('.textFill_text');
+
+        textElements.forEach(text => {
+            gsap.to(text, {
+                backgroundSize: '100%',
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: text,
+                    start: 'center 130%',
+                    end: 'center 70%',
+                    scrub: true,
                     //    markers: true,
-                     },
-                   });
-               });
+                },
+            });
+        });
 
-              
-    
-    },[]);
-        {/* https://codepen.io/Juxtopposed/pen/mdQaNbG */}
+
+
+    }, []);
+    {/* https://codepen.io/Juxtopposed/pen/mdQaNbG */ }
 
     return (
         <h3 className="scrollFillText w-[100%] mx-auto px-[2rem] vp4:px-[4rem] max-w-[1800px] bg-white
-        text-[calc(0.6rem+0.6vw)] font-ogg2 vp3:text-[min(45px,2.6vw)] vp7:text-[min(60px,3vw)]
+        text-[calc(0.75rem+0.6vw)] font-ogg2 vp3:text-[min(45px,2.6vw)] vp7:text-[min(60px,3vw)]
         gap-[0.5rem] flex flex-col">
             <div className="vp3:pl-[1rem] textFill_text ">From elegant weddings to corporate events,</div>
             <div className="vp3:pl-[1rem] textFill_text ">private dinners, or large celebrations,</div>

@@ -1,10 +1,9 @@
-
 const allText = {
     hero: {
         header: "Staffing Agency - the way to go, join us",
         paragraph: "Staffing Agency - the way to go, join us. Staffing Agency - the way to go, join us",
         image: "images/hero/hero.jpeg",
-        mainImage: "images/hero/hero_bg.jpg",
+        mainImage: "images/hero/hero-bg.jpg",
         cardImage1: "images/hero/card1.jpeg",
         cardImage2: "images/hero/card2.jpeg",
     },
@@ -61,42 +60,42 @@ const sectionThree_cards = [
     {
         header: "Country Clubs",
         description: "We prioritize making your members feel valued ensuring flawless execution of weddings, mitzvahs, anniversaries, and other important events.",
-        image: "/sectionThreeImages/1.jpg",
+        image: "/images/sectionThreeImages/country-clubs.jpg",
     },
     {
         header: "Hotels",
         description: "Reliable and professional team members to enhance your guest experiences, from housekeeping to front desk.",
-        image: "/sectionThreeImages/2.jpg"
+        image: "/images/sectionThreeImages/hotels.png"
     },
     {
         header: "Universities",
         description: "Flexible staffing solutions for campus events, dining halls, and administrative support.",
-        image: "/sectionThreeImages/3.jpg",
+        image: "/images/sectionThreeImages/universities.jpg",
     },
     {
         header: "Corporate Events",
-        image: "h/sectionThreeImages/4.jpg",
-        description: "Skilled personnel to deliver seamless service for meetings, conferences, and private gatherings."
+        description: "Skilled personnel to deliver seamless service for meetings, conferences, and private gatherings.",
+        image: "/images/sectionThreeImages/corporate-events.jpg"
     },
     {
         header: "Banquet Halls",
         description: "Dedicated team members to provide flawless service for weddings, parties, and special events.",
-        image: "/sectionThreeImages/5.jpg"
+        image: "/images/sectionThreeImages/banquet-halls.jpg"
     },
     {
         header: "Stadiums",
         description: "Versatile staff for concession stands, VIP sections, and event operations to keep fans happy and events running smoothly.",
-        image: "/sectionThreeImages/6.jpg"
+        image: "/images/sectionThreeImages/stadiums.jpg"
     },
     {
         header: "Catering Companies",
         description: "Professional and efficient staff to assist with meal prep, service, and cleanup for events of any scale.",
-        image: "/sectionThreeImages/7.jpg"
+        image: "/images/sectionThreeImages/catering-companies.jpg"
     },
     {
         header: "Cruise Lines",
         description: "Dedicated hospitality teams ready to deliver premium service on and off the water.",
-        image: "/sectionThreeImages/8.jpg"
+        image: "/images/sectionThreeImages/cruise-lines.jpg"
     },
 
 ]
@@ -143,101 +142,79 @@ const sectionFive_cards = [
     {
         header: "Banquet Server",
         paragraph: "Friendly and professional servers skilled in delivering exceptional dining experiences for weddings, corporate events, and private gatherings.",
-        image: "/sectionFiveImages/1.png"
-
+        image: "/images/sectionFiveImages/banquet-server.jpeg"
     },
-    {
-        header: "Kitchen Helper",
-        paragraph: "Dependable staff to assist with meal preparation, cleaning, and maintaining an organized kitchen during busy periods.",
-        image: "/sectionFiveImages/2.png"
-
-    },
-
     {
         header: "Banquet Captain",
         paragraph: "Experienced leaders who oversee banquet operations, ensuring flawless service and coordination of staff during events.",
-        image: "/sectionFiveImages/3.png"
-
+        image: "/images/sectionFiveImages/banquet-captain.jpg"
     },
-
     {
         header: "Maitre D'",
         paragraph: "Seasoned front-of-house managers to greet guests, manage seating arrangements, and supervise the overall dining experience.",
-        image: "/sectionFiveImages/4.jpg"
-
+        image: "/images/sectionFiveImages/maitre-d.jpg"
     },
-
     {
         header: "Concession Stand Worker",
         paragraph: "Reliable team members adept at serving food, drinks, and handling transactions at stadiums, fairs, and other event venues.",
-        image: "/sectionFiveImages/5.png"
-
+        image: "/images/sectionFiveImages/concession-stand.jpg"
     },
-
     {
         header: "Line Cook",
         paragraph: "Skilled culinary professionals who can execute dishes efficiently, ensuring high-quality food service in kitchens of all sizes.",
-        image: "/sectionFiveImages/6.png"
-
+        image: "/images/sectionFiveImages/line-cook.jpg"
     },
-
     {
         header: "Dishwasher",
         paragraph: "Hardworking individuals responsible for maintaining clean kitchen equipment and ensuring smooth kitchen operations.",
-        image: "/sectionFiveImages/7.jpg"
-
+        image: "/images/sectionFiveImages/dishwasher.jpg"
     },
-
     {
         header: "Housekeeper",
         paragraph: "Meticulous staff focused on maintaining cleanliness and tidiness for hotels, resorts, and other establishments.",
-        image: "/sectionFiveImages/8.png"
-
+        image: "/images/sectionFiveImages/housekeeper.jpg"
     },
-
     {
         header: "Event Setup Crew",
         paragraph: "Detail-oriented staff skilled in setting up event spaces, including furniture arrangement, decorations, and technical equipment.",
-        image: "/sectionFiveImages/9.png"
-
+        image: "/images/sectionFiveImages/event-setup-crew.jpg"
     },
-
     {
         header: "Guest Service Representative",
         paragraph: "Polished customer-facing professionals offering exceptional service at front desks, events, and receptions.",
-        image: "/sectionFiveImages/10.png"
-
+        image: "/images/sectionFiveImages/guest-service-representative.jpg"
     },
-
     {
         header: "Event Security Staff",
         paragraph: "Responsible individuals who maintain order, safety, and guest satisfaction during events of any size.",
-        image: "/sectionFiveImages/11.png"
-
+        image: "/images/sectionFiveImages/event-security-staff.jpg"
     },
-
     {
         header: "Event Manager",
         paragraph: "Experienced professionals to plan, oversee, and execute events, ensuring everything runs smoothly and meets expectations.",
-        image: "/sectionFiveImages/12.png"
-
+        image: "/images/sectionFiveImages/event-manager.jpg"
     },
+    // {
+    //     header: "Kitchen Helper",
+    //     paragraph: "Dependable staff to assist with meal preparation, cleaning, and maintaining an organized kitchen during busy periods.",
+    //     image: "/images/sectionFiveImages/2.png"
 
-    {
-        header: "General Laborer",
-        paragraph: "Versatile staff who can assist with a wide range of tasks, including loading/unloading, venue setups, and logistics.",
-        image: "/sectionFiveImages/13.png"
-    },
+    // },
+    // {
+    //     header: "General Laborer",
+    //     paragraph: "Versatile staff who can assist with a wide range of tasks, including loading/unloading, venue setups, and logistics.",
+    //     image: "/images/sectionFiveImages/13.png"
+    // },
 ]
 
 // Form images
 const formImages = [
-    "/sectionFiveImages/1.png",
-    "/sectionFiveImages/2.png",
-    "/sectionFiveImages/3.png",
-    "/sectionFiveImages/4.jpg",
-    "/sectionFiveImages/5.png",
-  ];
+    "/images/sectionFiveImages/1.png",
+    "/images/sectionFiveImages/2.png",
+    "/images/sectionFiveImages/3.png",
+    "/images/sectionFiveImages/4.jpg",
+    "/images/sectionFiveImages/5.png",
+];
 
 module.exports = {
     allText,

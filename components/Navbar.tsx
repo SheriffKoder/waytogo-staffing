@@ -1,19 +1,17 @@
-"use client"
-import React from 'react'
-import { nav_links } from '@/constants'
-import Link from 'next/link'
-import Image from 'next/image'
+"use client";
+import React from "react";
+import { nav_links } from "@/constants";
+import Link from "next/link";
+import Image from "next/image";
 
 import { useGSAP } from "@gsap/react";
-import gsap from 'gsap'
-import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
+import gsap from "gsap";
+import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
 
 const Navbar = () => {
-
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-    
-  useGSAP(()=> {
 
+  useGSAP(() => {
     let navLinks = gsap.utils.toArray(".navLinks");
 
     // move the links up on page entry
@@ -22,37 +20,39 @@ const Navbar = () => {
       opacity: 1,
       duration: 1,
       ease: "power2.out",
-    })
-
-
-  },[]);
+    });
+  }, []);
 
   return (
-    <nav className='w-full h-auto py-[1.5rem] px-[1rem] vp4:px-[2rem] bg-[#fffffff1]
-    fixed top-0 z-[99]'>
+    <nav className="w-full h-auto py-[1.5rem] px-[1rem] vp4:px-[2rem] bg-[#fffffff1] fixed top-0 z-[99]">
+      <Link href="/">
+        <Image
+          src="/images/logo2.png"
+          alt="company logo 1"
+          className="absolute left-[1rem] top-[0.75rem] vp2:top-[1rem] my-auto p-[2px] vp1:p-1 rounded-[7px]"
+          width={100}
+          height={70}
+        ></Image>
+      </Link>
 
-    <Link href="/">
-      <Image src="/images/logo2.png" alt="company logo 1" 
-      className='absolute left-[1rem] top-[0.75rem] vp2:top-[1rem] my-auto p-[2px] vp1:p-1 accent1-br border-1 rounded-[7px]' width={100} height={70}></Image>
-    </Link>
-    
-
-      <ul className='w-full flex flex-row gap-[1rem] vp4:gap-[4rem] paragraph1 justify-end vp4:justify-center'>
-        {
-          nav_links.map((link, index)=> (
-            <Link href={link.href} aria-label={link.aria} key={"nav link"+link.text}
+      <ul className="w-full flex flex-row gap-[1rem] vp4:gap-[4rem] paragraph1 justify-end vp4:justify-center">
+        {nav_links.map((link, index) => (
+          <Link
+            href={link.href}
+            aria-label={link.aria}
+            key={"nav link" + link.text}
             className={`hover:text-[#A58964] trans1 navLinks opacity-0
             
             `}
             // according to index, initialy set the position of the links below
-            style={{transform: `translateY(${4*(index+5)}px)`}}>
-              {link.text}
-            </Link>
-          ))
-        }
+            style={{ transform: `translateY(${4 * (index + 5)}px)` }}
+          >
+            {link.text}
+          </Link>
+        ))}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
