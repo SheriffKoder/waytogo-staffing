@@ -20,6 +20,7 @@ function CarouselGames() {
                             pauseOnFocus: false, // Do not pause scrolling when the carousel is focused
                             rewind: true, // Rewind to start when the end is reached
                             speed: 0.4 // Scrolling speed
+                            
                         },
                         arrows: true, // Hide navigation arrows
                         pagination: false, // Hide pagination dots
@@ -28,7 +29,8 @@ function CarouselGames() {
                         // waitForTransition: true,
                         // releaseWheel: true,
                         autoWidth: true,
-                        
+                        focus: 'center',
+
 
                     }}
                     extensions={{ AutoScroll }} // Use the AutoScroll extension
@@ -42,17 +44,17 @@ function CarouselGames() {
                         <SplideSlide key={card.header}>
                         <div 
                         className='
-                        w-[40vw] h-[50vh] rounded-[10px] p-[1rem]
-                        hover:w-[min(550px,45vw)] hover:h-[50vh]
+                        w-[70vw] h-[50vh] rounded-[10px] p-[1rem]
+                        hover:w-[min(550px,85vw)] hover:h-[50vh]
                         vp4:w-[min(500px,40vw)] vp4:h-[min(600px,55vw)] vp5:h-[min(600px,45vw)] vp6:h-[min(600px,37vw)]
-                        vp4:hover:w-[min(550px,42vw)] vp4:hover:h-[min(600px,37vw)] vp5:hover:h-[min(600px,45vw)] vp6:hover:h-[min(600px,37vw)]
+                        vp4:hover:w-[min(550px,42vw)] vp4:hover:h-[min(600px,55vw)] vp5:hover:h-[min(600px,45vw)] vp6:hover:h-[min(600px,37vw)]
                         transition-all duration-500 ease-out border
                          
                         splideCard text-white'
                         style={{
                             background: "#00000060",
-                            background: `linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 21%, rgba(255,255,255,0) 100%), url(${card.image})`,
-                            backgroundPosition: "cover",
+                            background: `linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 61%, rgba(255,255,255,0) 100%), url(${card.image})`,
+                            backgroundPosition: "center",
                             backgroundRepeat: "no-repeat",
                             backgroundSize: "cover",
                           }}

@@ -151,7 +151,6 @@ const Hero = () => {
   return (
     <div className='w-full relative'>
 
-
         {/* background */}
         <div className='
         h-[150vh] zoomWrapper top-0 left-0 w-full
@@ -163,20 +162,27 @@ const Hero = () => {
             flex items-start justify-center flex-col textHero translate-y-[5rem] opacity-0
             vp4:px-[4rem] mx-auto'>
 
-                <h1 className='heading1 text_blend heroText text-center vp3:text-start w-full
+                <h1 className='heading1 heroText text-center vp3:text-start w-full
                 flex flex-col'>
-                <span className='text_shadow_white'>
+                <span className=''>
                     WayToGo 
                 </span>
                 <span className='vp4:w-full'> Staffing</span>
                 </h1>
 
-                <p className='heading2 w-full heroText text-center flex flex-row flex-wrap gap-0 justify-center items-center vp3:justify-start'>
-                    <span>Your Partner for</span>
-                    <span className='signature mx-[0.5rem] text_shadow_1 brightness-[1.4]'>Exceptional</span>
-                    <span className='vp4:w-full vp4:text-start'>
-                    <span>Talent, Every Time.</span>
+                <p className='heading2 w-full heroText text-center flex flex-col flex-wrap gap-0 justify-center items-center vp3:items-start'>
+                    
+                    <span className='flex flex-col vp4:flex-row items-center justify-center'>
+                        <span>Your Partner for</span>
+                        <span>
+                            <span className='signature mx-[0.5rem] text_shadow_2 brightness-[1.2]'>Exceptional</span>
+                            <span>Talent,</span>
+                        </span>
                     </span>
+                  
+
+
+                    <span>Every Time.</span>
                 </p>
 
                 <div className="flex flex-col vp4:flex-row gap-2 justify-center w-full vp3:justify-start">
@@ -230,8 +236,8 @@ const Hero = () => {
             justify-center top-[95vh] vp4:top-[90vh]'>
                 <div className='zoomBox h-[20vw] w-[40vw] rounded-[20px]' id="hero_bg"
                     style={{
-                        backgroundImage: `url(${allText.hero.image})`,
-                        // background: `linear-gradient(23deg, rgba(196, 187, 173, 0.7) 0%, rgba(196, 187, 173, 0.6) 100%), url(${allText.hero.image})`,
+                        // backgroundImage: `url(${allText.hero.mainImage})`,
+                        background: `linear-gradient(45deg, rgba(63, 60, 55, 1) 0%, rgba(196, 187, 173, 0) 50%), url(${allText.hero.mainImage})`,
 
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",

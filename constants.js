@@ -4,13 +4,14 @@ const allText = {
         header: "Staffing Agency - the way to go, join us",
         paragraph: "Staffing Agency - the way to go, join us. Staffing Agency - the way to go, join us",
         image: "images/hero/hero.jpeg",
+        mainImage: "images/hero/hero_bg.jpg",
         cardImage1: "images/hero/card1.jpeg",
         cardImage2: "images/hero/card2.jpeg",
     },
     section2: {
         header: "The Value We Bring",
         paragraph: "At Way to Go Staffing, we understand that your success starts with exceptional people. Our unwavering commitment to quality and reliability ensures that every placement strengthens your business. With over yearsNum years of staffing expertise, we deliver a 99% client satisfaction rate and proudly serve over 100 hospitality businesses. Trusted for our precision in matching the right talent to the right roles, we work efficiently to help you achieve your goals—every time.",
-        cardImage1: "https://media.istockphoto.com/id/1498242299/photo/group-of-trainees-wearing-formal-clothes-in-hotel-professional-butler-courses.jpg?s=1024x1024&w=is&k=20&c=FN2YFrOjqatG0PGlYBa3MZy_Dhdexa5DM-VwmyfYCsw="
+        cardImage1: "images/hero/hero.jpeg"
     },
     section3: {
         header: "What We do",

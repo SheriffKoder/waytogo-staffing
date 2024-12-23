@@ -159,6 +159,13 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
   @apply f_rouge text-[min(4.5rem+6vw,150px)] accent1-t-inv leading-[0px]
 }
 
+.text_blend {
+  color: black;
+  background-color: white;
+  mix-blend-mode: difference;
+  filter: invert(1);
+}
+
 
 .tb {
   @apply border border-black
@@ -171,6 +178,9 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 /* //////////////////////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////////////////////// */
 /* backgorunds */
+.splide__slide.is-active .inner {
+  transform: scale( 1.2 );
+}
 
 .glass_bg {
   background: #a58964af;
@@ -182,7 +192,7 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 #hero_bg {
-  background-color: rgba(196, 187, 173, 0.6);
+  /* background-color: rgba(63, 60, 55, 0.89); */
   background-blend-mode:screen;
 }
 /* c4bbad */

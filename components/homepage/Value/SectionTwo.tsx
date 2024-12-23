@@ -98,7 +98,7 @@ const SectionTwo = () => {
         ))}
       </h2>
 
-      <p className='paragraph2 vp4:px-[2rem] w-[70%] m-[2rem] mt-0 ml-[1rem] section2Para translate-y-[25px] opacity-0'>
+      <p className='paragraph2 vp4:px-[2rem] w-[67%] m-[2rem] mt-0 ml-[1rem] section2Para translate-y-[25px] opacity-0 text-balance'>
           At Way to Go Staffing, we understand that your success starts with exceptional people. Our unwavering commitment to quality and reliability ensures that every placement strengthens your business. With over 
           <span className='font-bold'> {calculateYearsFrom(2014)} years of staffing expertise</span>, we deliver a
           <span className='font-bold'> 99% client satisfaction</span> rate and proudly 
@@ -111,7 +111,7 @@ const SectionTwo = () => {
       vp5:px-[2rem]'>
 
   
-        {/* dark card */}
+        {/* dark card - parallax google */}
         <Tilt perspective={3000} className='accent1-dark-bg-grad tilt-parallax-effect box_shadow_dark_main
         section2DarkCard opacity-0 translate-x-[-100px] rounded-[10px] hidden vp5:flex 
         flex-col  w-[min(calc(200px+20vw),400px)] 
@@ -176,8 +176,8 @@ const SectionTwo = () => {
             background: `
             linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.90) 100%), url("${allText.section2.cardImage1}")
             `,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
+            backgroundPosition: "top",
+            backgroundSize: "100%",
             backgroundRepeat: "no-repeat"
             }}>
 
@@ -187,7 +187,7 @@ const SectionTwo = () => {
 
 
         {/* dark card small view port */}
-        <div className='absolute top-[26rem] vp3:top-[2rem] right-[1rem] rotate-[16deg] vp5:hidden parallaxCard3
+        <div className='absolute top-[0rem] vp3:top-[2rem] right-[-1.2rem] rotate-[16deg] vp5:hidden parallaxCard3
         mx-auto w-[min(calc(100px+10vw),200px)] h-[min(calc(100px+10vw),200px)] rounded-[10px]
         accent1-dark-bg text-white text-base p-[0.5rem] flex flex-col gap-[0.25rem]  vp3:gap-[0.5rem]
         items-center justify-center z-[1]'>

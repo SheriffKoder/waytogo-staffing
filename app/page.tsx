@@ -19,7 +19,7 @@ export default function Home() {
         <SectionTwo/>
       </section>
 
-      <section className="w-full min-h-[50vh] mt-[-5vh] vp3:mt-0" id="events">
+      <section className="w-full min-h-[50vh] mt-[-5vh] vp3:mt-0 relative" id="events">
         <SectionThree/>
       </section>
 
