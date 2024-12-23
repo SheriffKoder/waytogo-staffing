@@ -159,7 +159,7 @@ const Hero = () => {
 
 
             {/* // section's text w parallax */}
-            <div className='sticky top-[65%] vp2:top-[65%] vp3:top-[35%] parallax1 z-[2] max-w-[1400px] px-[2rem]
+            <div className='sticky top-[68%] vp2:top-[65%] vp3:top-[35%] parallax1 z-[2] max-w-[1400px] px-[2rem]
             flex items-start justify-center flex-col textHero translate-y-[5rem] opacity-0
             vp4:px-[4rem] mx-auto'>
 
