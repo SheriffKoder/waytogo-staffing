@@ -62,7 +62,7 @@ const SectionSix = () => {
             parallax6_1 accent1-light-bg 
             translate-y-[0vw] z-[1]
             top-[70%] vp4:top-[70%]
-            absolute left-[40%] vp4:left-[38%]
+            absolute left-[46%] vp4:left-[38%]
             flex p-[1rem] vp4:p-[2rem]
             flex-col text-black items-start justify-center gap-[0.5rem]'
             style={{
