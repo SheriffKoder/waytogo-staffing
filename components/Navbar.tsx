@@ -33,7 +33,7 @@ const Navbar = () => {
 
     <Link href="/">
       <Image src="/images/logo2.png" alt="company logo 1" 
-      className='absolute left-[1rem] top-[1rem] my-auto p-1 accent1-br border-1 rounded-[7px]' width={100} height={70}></Image>
+      className='absolute left-[1rem] top-[0.75rem] vp2:top-[1rem] my-auto p-[2px] vp1:p-1 accent1-br border-1 rounded-[7px]' width={100} height={70}></Image>
     </Link>
     
 

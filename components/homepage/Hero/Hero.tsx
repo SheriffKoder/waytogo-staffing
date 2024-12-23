@@ -149,7 +149,7 @@ const Hero = () => {
 
 
   return (
-    <div className='w-full overflow-x-hidden'>
+    <div className='w-full relative'>
 
 
         {/* background */}
@@ -159,7 +159,7 @@ const Hero = () => {
 
 
             {/* // section's text w parallax */}
-            <div className='sticky top-[60%] vp2:top-[60%] vp3:top-[35%] parallax1 z-[2] max-w-[1400px] px-[2rem]
+            <div className='sticky top-[60%] vp2:top-[60%] vp3:top-[35%] z-[2] max-w-[1400px] px-[2rem]
             flex items-start justify-center flex-col textHero translate-y-[5rem] opacity-0
             vp4:px-[4rem] mx-auto'>
 
