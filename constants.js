@@ -13,22 +13,26 @@ const allText = {
         cardImage1: "https://media.istockphoto.com/id/1498242299/photo/group-of-trainees-wearing-formal-clothes-in-hotel-professional-butler-courses.jpg?s=1024x1024&w=is&k=20&c=FN2YFrOjqatG0PGlYBa3MZy_Dhdexa5DM-VwmyfYCsw="
     },
     section3: {
-        header: "What we do",
+        header: "What We do",
         paragraph: "From elegant weddings to corporate events, private dinners, or large celebrations, our waitstaff adapts seamlessly to any setting. Whether you need formal service or a casual touch, we provide tailored staffing to match your event's unique style and needs."
     },
     section4: {
-        header: "Why choose WayToGo",
+        header: "Why Choose WayToGo",
         paragraph1: "We offer flexible staffing solutions, including temporary-to-permanent placements, allowing businesses and employees to find the perfect long-term match.",
         paragraph2: "Whether you need event support or core team members, Way to Go Staffing ensures quality placements tailored to your needs."
     },
     section5: {
-        header: "Our services",
+        header: "Our Services",
         paragraph: "Our extensively trained staff consistently elevate every event, going above and beyond to ensure each experience is exceptional.",
     },
     section6: {
-        image: "images/partner-with-us.jpeg",
+        image: "images/partner-with-us-2.png",
         header: "Partner with WayToGo Staffing",
         paragraph: "Your solution to seamless and reliable staffing.",
+    },
+    FormPage: {
+        header: "Join Our Team",
+        paragraph: "Let's make a difference together",
     }
 }
 

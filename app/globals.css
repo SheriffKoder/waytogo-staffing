@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap');
 @import '@splidejs/splide/css/sea-green';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.f_ysa {
+  @apply font-['Ysabeau_SC']
+}
 
 
 .f_rale {
@@ -90,7 +96,7 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 .text_shadow_white {
-  text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.712);
+  text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.6);
 
 }
 .text_shadow_2 {
@@ -154,9 +160,6 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 
-
-
-
 .tb {
   @apply border border-black
 }
@@ -179,10 +182,10 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 #hero_bg {
-  background-color: #c4bbad;
+  background-color: rgba(196, 187, 173, 0.882);
   background-blend-mode:screen;
 }
-
+/* c4bbad */
 .tilt-parallax-effect {
   transform-style: preserve-3d;
   

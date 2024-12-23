@@ -173,7 +173,7 @@ const Hero = () => {
 
                 <p className='heading2 w-full heroText text-center flex flex-row flex-wrap gap-0 justify-center items-center vp3:justify-start'>
                     <span>Your Partner for</span>
-                    <span className='signature mx-[0.5rem] text_shadow_white'>Exceptional</span>
+                    <span className='signature mx-[0.5rem] text_shadow_1 brightness-[1.5]'>Exceptional</span>
                     <span className='vp4:w-full vp4:text-start'>
                     <span>Talent, Every Time.</span>
                     </span>
@@ -230,7 +230,9 @@ const Hero = () => {
             justify-center top-[95vh] vp4:top-[90vh]'>
                 <div className='zoomBox h-[20vw] w-[40vw] rounded-[20px]' id="hero_bg"
                     style={{
-                        backgroundImage: `url(${allText.hero.image})`,
+                        // backgroundImage: `url(${allText.hero.image})`,
+                        background: `linear-gradient(23deg, rgba(196, 187, 173, 0.7) 0%, rgba(196, 187, 173, 0.6) 100%), url(${allText.hero.image})`,
+
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",
                     }}>
@@ -243,7 +245,7 @@ const Hero = () => {
                 <div className='pb-[0rem] vp4:px-[4rem] parallaxPara
                 paragraph3 flex justify-center vp3:justify-start vp3:pl-[2rem]'>
 
-                    <p className='max-w-[min(700px,80vw)] vp5:max-w-[min(1000px,80vw)] text-center vp3:text-start
+                    <p className='text_shadow_white f_ysa tracking-wider text-[min(calc(0.5rem+1.2vw),30px)] max-w-[min(700px,80vw)] vp5:max-w-[min(1000px,80vw)] text-center vp3:text-start
                     '>
                     Delivering tailored staffing solutions that prioritize quality, reliability, and trust—helping your business thrive with the right team.                    
                     </p>

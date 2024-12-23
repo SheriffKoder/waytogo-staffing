@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import ImageSlider from "./slider2"
 import { redirect } from "next/navigation"
-import { formImages } from "@/constants"
+import { allText, formImages } from "@/constants"
 
 const formSchema = z.object({
   firstname: z.string().min(1, "First name is required"),
@@ -137,8 +137,8 @@ const Form = () => {
             style={{
               background: "linear-gradient(160deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 21%, rgba(255,255,255,0) 100%)"
             }}>
-            <h1 className="heading2">Join our team</h1>
-            <p className="f_rale text-[min(calc(0.75rem+2vw),35px) vp5:text-[min(calc(0.75rem+1vw),35px)] ">Let us make a difference</p>
+            <h1 className="heading2">{allText.FormPage.header}</h1>
+            <p className="f_rale text-[min(calc(0.75rem+2vw),35px) vp5:text-[min(calc(0.75rem+1vw),35px)] ">{allText.FormPage.paragraph}</p>
           </div>
 
           <ImageSlider images={formImages} />
