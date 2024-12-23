@@ -238,9 +238,9 @@ const Form = () => {
               />
             </div>
 
-            <fieldset className="form_radio_row">
+            <fieldset className="form_area">
               <legend className="FormLabel w-full">Gender</legend>
-              <div className="flex flex-col gap-2">
+              <div className="form_radio_row">
                 <div className="flex flex-row gap-2">
                   <input
                     type="radio"
