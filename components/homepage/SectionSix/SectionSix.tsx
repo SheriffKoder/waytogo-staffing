@@ -52,8 +52,8 @@ const SectionSix = () => {
 
 
   return (
-    <div className='flex items-center justify-center min-h-[70vh] h-[120vh] w-full section6Container relative
-    pb-[10vh] tb'>
+    <div className='flex items-center justify-center vp6:min-h-[70vh] h-[120vh] min-h-[700px] w-full section6Container relative
+    pb-[10vh]'>
 
             <div className='SixCard1 box_shadow_dark
             w-[85vw] vp4:w-[min(600px,65vw)]
@@ -62,7 +62,7 @@ const SectionSix = () => {
             parallax6_1 accent1-light-bg 
             translate-y-[0vw] z-[1]
             top-[70%] vp4:top-[70%]
-            absolute left-[50%] vp4:left-[36%]
+            absolute left-[40%] vp4:left-[38%]
             flex p-[1rem] vp4:p-[2rem]
             flex-col text-black items-start justify-center gap-[0.5rem]'
             style={{
@@ -103,7 +103,7 @@ const SectionSix = () => {
             h-[45vh] vp4:h-[min(450px,40vw)]
             rounded-[20px] mr-0 vp4:mr-[10vw]
             top-[40%] vp4:top-[45%]
-            parallax6_2 absolute left-[54.5%] vp4:left-[65%]'
+            parallax6_2 absolute left-[54.5%] vp4:left-[60%]'
             style={{
                 backgroundImage: `url(${allText.section6.image})`,
                 backgroundPosition: "center",

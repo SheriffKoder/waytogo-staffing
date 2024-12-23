@@ -173,7 +173,7 @@ const Hero = () => {
 
                 <p className='heading2 w-full heroText text-center flex flex-row flex-wrap gap-0 justify-center items-center vp3:justify-start'>
                     <span>Your Partner for</span>
-                    <span className='signature mx-[0.5rem] text_shadow_1 brightness-[1.5]'>Exceptional</span>
+                    <span className='signature mx-[0.5rem] text_shadow_1 brightness-[1.4]'>Exceptional</span>
                     <span className='vp4:w-full vp4:text-start'>
                     <span>Talent, Every Time.</span>
                     </span>
@@ -200,7 +200,7 @@ const Hero = () => {
 
 
             {/* Hero cards */}
-            <div className='opacity-0 HeroCard1 absolute top-[21%] vp3:top-[30%] vp4:top-[35%] right-[50%] vp3:right-[25%] vp4:right-[20%]
+            <div className='opacity-0 HeroCard1 absolute top-[21%] vp3:top-[35%] vp5:top-[35%] right-[50%] vp3:right-[25%] vp5:right-[20%]
             parallax2 z-[1] transition-all ease-linear duration-500
             w-[150px] h-[150px] rounded-[20px] rotate-[16deg]
             vp4:w-[300px] vp4:h-[300px] vp8:w-[450] vp8:h-[450] box_shadow_dark'
@@ -211,7 +211,7 @@ const Hero = () => {
             }}>   
             </div>
 
-            <div className='opacity-0 HeroCard2 absolute top-[21%] vp3:top-[30%] vp4:top-[35%] right-[52%] vp3:right-[25%] vp4:right-[20%]
+            <div className='opacity-0 HeroCard2 absolute top-[21%] vp3:top-[35%] vp5:top-[35%] right-[52%] vp3:right-[25%] vp5:right-[20%]
             parallax2 z-[1] transition-all ease-linear duration-500
             w-[150px] h-[150px] rounded-[20px] rotate-[-10deg]
             vp4:w-[300px] vp4:h-[300px] vp8:w-[450] vp8:h-[450] box_shadow_dark'
@@ -230,8 +230,8 @@ const Hero = () => {
             justify-center top-[95vh] vp4:top-[90vh]'>
                 <div className='zoomBox h-[20vw] w-[40vw] rounded-[20px]' id="hero_bg"
                     style={{
-                        // backgroundImage: `url(${allText.hero.image})`,
-                        background: `linear-gradient(23deg, rgba(196, 187, 173, 0.7) 0%, rgba(196, 187, 173, 0.6) 100%), url(${allText.hero.image})`,
+                        backgroundImage: `url(${allText.hero.image})`,
+                        // background: `linear-gradient(23deg, rgba(196, 187, 173, 0.7) 0%, rgba(196, 187, 173, 0.6) 100%), url(${allText.hero.image})`,
 
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",
@@ -244,8 +244,8 @@ const Hero = () => {
             vp6:bottom-[-6vw] absolute flex-c-c w-full'>
                 <div className='pb-[0rem] vp4:px-[4rem] parallaxPara
                 paragraph3 flex justify-center vp3:justify-start vp3:pl-[2rem]'>
-
-                    <p className='text_shadow_white f_ysa tracking-wider text-[min(calc(0.5rem+1.2vw),30px)] max-w-[min(700px,80vw)] vp5:max-w-[min(1000px,80vw)] text-center vp3:text-start
+{/* text_shadow_white */}
+                    <p className=' f_ysa tracking-wider text-[min(calc(0.5rem+1.2vw),30px)] max-w-[min(700px,80vw)] vp5:max-w-[min(1000px,80vw)] text-center vp3:text-start
                     '>
                     Delivering tailored staffing solutions that prioritize quality, reliability, and trust—helping your business thrive with the right team.                    
                     </p>

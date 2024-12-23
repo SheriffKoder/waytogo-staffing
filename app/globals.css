@@ -67,7 +67,7 @@ body {
 }
 
 .accent1-br {
-  @apply border-2 border-[#A58964] accent1-t
+  @apply border border-[#A58964] accent1-t
 }
 
 .accent1-dark-bg {
