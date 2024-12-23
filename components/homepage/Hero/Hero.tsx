@@ -26,16 +26,16 @@ const Hero = () => {
             
 
         // parallax effect for text
-        gsap.to(".parallax1", {
-            yPercent: window.innerWidth < 520 ? -320 : -60,
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".zoomWrapper",
-                start: "center bottom", // the default values
-                end: "bottom top",
-                scrub: 0.1
-            }, 
-        });
+        // gsap.to(".parallax1", {
+        //     yPercent: window.innerWidth < 520 ? -320 : 50,
+        //     ease: "none",
+        //     scrollTrigger: {
+        //         trigger: ".zoomWrapper",
+        //         start: "center bottom", // the default values
+        //         end: "bottom top",
+        //         scrub: 0.1
+        //     }, 
+        // });
 
 
              // parallax cards
@@ -159,7 +159,7 @@ const Hero = () => {
 
 
             {/* // section's text w parallax */}
-            <div className='sticky top-[60%] vp2:top-[60%] vp3:top-[35%] z-[2] max-w-[1400px] px-[2rem]
+            <div className='absolute tb top-[60%] vp2:top-[60%] vp3:top-[20%] parallax1 z-[2] max-w-[1400px] px-[2rem]
             flex items-start justify-center flex-col textHero translate-y-[5rem] opacity-0
             vp4:px-[4rem] mx-auto'>
 
