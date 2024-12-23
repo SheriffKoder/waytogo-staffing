@@ -192,8 +192,8 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 #hero_bg {
-  /* background-color: rgba(63, 60, 55, 0.89); */
-  background-blend-mode:screen;
+  background-color: rgba(165, 157, 143, 0.89);
+  /* background-blend-mode:screen; */
 }
 /* c4bbad */
 .tilt-parallax-effect {

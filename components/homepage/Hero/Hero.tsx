@@ -163,7 +163,7 @@ const Hero = () => {
             vp4:px-[4rem] mx-auto'>
 
                 <h1 className='heading1 heroText text-center vp3:text-start w-full
-                flex flex-col'>
+                flex flex-col leading-snug'>
                 <span className=''>
                     WayToGo 
                 </span>
@@ -172,20 +172,18 @@ const Hero = () => {
 
                 <p className='heading2 w-full heroText text-center flex flex-col flex-wrap gap-0 justify-center items-center vp3:items-start'>
                     
-                    <span className='flex flex-col vp4:flex-row items-center justify-center'>
-                        <span>Your Partner for</span>
+                    <span className='flex flex-col vp4:flex-row items-center vp4:items-start justify-center leading-10'>
+                        <span className='mx-auto'>Your Partner for</span>
                         <span>
-                            <span className='signature mx-[0.5rem] text_shadow_2 brightness-[1.2]'>Exceptional</span>
+                            <span className='signature mx-[0.5rem] text_shadow_1 brightness-[1.2]'>Exceptional</span>
                             <span>Talent,</span>
                         </span>
                     </span>
-                  
-
 
                     <span>Every Time.</span>
                 </p>
 
-                <div className="flex flex-col vp4:flex-row gap-2 justify-center w-full vp3:justify-start">
+                <div className="flex flex-col vp4:flex-row gap-2 justify-center w-full vp3:justify-start mt-[1.5rem]">
                     <CalendarButton 
                         targetId='hero-calendar'
                         className='accent1-bg rounded-full paragraph1 px-4 py-2 vp4:px-4 vp4:py-2 text-white
@@ -237,8 +235,8 @@ const Hero = () => {
                 <div className='zoomBox h-[20vw] w-[40vw] rounded-[20px]' id="hero_bg"
                     style={{
                         // backgroundImage: `url(${allText.hero.mainImage})`,
-                        background: `linear-gradient(45deg, rgba(63, 60, 55, 1) 0%, rgba(196, 187, 173, 0) 50%), url(${allText.hero.mainImage})`,
-
+                        background: `linear-gradient(12deg, rgba(165, 157, 143, 1) 0%, rgba(150, 142, 129, 0.0) 100%), url(${allText.hero.mainImage})`,
+                        backgroundPosition: "30%",
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",
                     }}>
@@ -247,11 +245,11 @@ const Hero = () => {
            
 
             <div className='bottom-[40vw] vp2:bottom-[-5rem] vp3:bottom-[-10vw] vp4:bottom-[-10vw] vp5:bottom-[-4vw] 
-            vp6:bottom-[-6vw] absolute flex-c-c w-full'>
+            vp6:bottom-[-11vw] absolute flex-c-c w-full'>
                 <div className='pb-[0rem] vp4:px-[4rem] parallaxPara
                 paragraph3 flex justify-center vp3:justify-start vp3:pl-[2rem]'>
 {/* text_shadow_white */}
-                    <p className='text_shadow_white f_ysa tracking-wider text-[min(calc(0.5rem+1.2vw),30px)] max-w-[min(700px,80vw)] vp5:max-w-[min(1000px,80vw)] text-center vp3:text-start
+                    <p className='text_shadow_0 f_ysa tracking-wider text-[min(calc(0.5rem+1.2vw),30px)] max-w-[min(700px,80vw)] vp5:max-w-[min(1000px,80vw)] text-center vp3:text-start
                     '>
                     Delivering tailored staffing solutions that prioritize quality, reliability, and trust—helping your business thrive with the right team.                    
                     </p>
