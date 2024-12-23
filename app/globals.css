@@ -182,7 +182,7 @@ background: linear-gradient(170deg, rgba(194,175,150,1) 0%, rgba(155,121,93,1) 1
 }
 
 #hero_bg {
-  background-color: rgba(196, 187, 173, 0.882);
+  background-color: rgba(196, 187, 173, 0.6);
   background-blend-mode:screen;
 }
 /* c4bbad */
