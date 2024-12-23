@@ -82,12 +82,12 @@ const SectionSix = () => {
                     <CalendarButton
                         targetId="six-calendar" 
                         className='w-full accent1-bg rounded-full paragraph1 px-4 py-2 vp4:px-4 vp4:py-2 text-white
-                        focus:outline-[#A58964] hover:outline-[#9b795d] trans1 outline-transparent outline outline-2 outline-offset-4
+                        focus:outline-[#A58964] hover:outline-[#9b795d] trans1 outline-transparent outline outline-2 outline-offset-2
                         cursor-pointer'
                     />
 
                     <button className='w-full accent2-bg text-white rounded-full paragraph1 px-1 py-2 vp4:px-6 vp4:py-2
-                    focus:outline-[#13162e] hover:outline-[#13162e] trans1 outline-transparent outline outline-2 outline-offset-4
+                    focus:outline-[#13162e] hover:outline-[#13162e] trans1 outline-transparent outline outline-2 outline-offset-2
                     focus:bg-[#13162e] hover:bg-[#13162e]'>
                         <Link href="/join-us">
                             Join Our Team

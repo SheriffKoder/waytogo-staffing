@@ -548,7 +548,7 @@ button.splide__arrow svg {
 
 #join_form button[type=submit] {
   @apply accent1-bg px-2 py-2 w-[300px] rounded-full mx-auto text-white
-  focus:outline-[#A58964] hover:outline-[#A58964] outline-offset-4
+  focus:outline-[#A58964] hover:outline-[#A58964] outline-offset-2
   focus:bg-[#9b795d] hover:bg-[#9b795d]
 }
 

@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import ImageSlider from "./slider2"
 import { redirect } from "next/navigation"
+import { formImages } from "@/constants"
 
 const formSchema = z.object({
   firstname: z.string().min(1, "First name is required"),
@@ -52,13 +53,7 @@ type FormValues = z.infer<typeof formSchema>
 
 const Form = () => {
 
-  const images = [
-    "/sectionFiveImages/1.jpg",
-    "/sectionFiveImages/2.jpg",
-    "/sectionFiveImages/3.jpg",
-    "/sectionFiveImages/4.jpg",
-    "/sectionFiveImages/5.jpg",
-  ];
+
 
   const {
     register,
@@ -146,7 +141,7 @@ const Form = () => {
             <p className="f_rale text-[min(calc(0.75rem+2vw),35px) vp5:text-[min(calc(0.75rem+1vw),35px)] ">Let us make a difference</p>
           </div>
 
-          <ImageSlider images={images} />
+          <ImageSlider images={formImages} />
         </div>
 
         <div className="flex flex-col gap-[3rem] mx-auto order-1 mt-[-1rem] vp5:mt-0">
@@ -203,7 +198,7 @@ const Form = () => {
               <label className="FormLabel" htmlFor="birth">
                 Date of Birth
               </label>
-
+              
               <input
                 className="FormInput"
                 id="birth"
@@ -225,7 +220,7 @@ const Form = () => {
                 {...register("phone")}
 
                 type="text"
-                placeholder="+00123456789" />
+                placeholder="+1 (123) 456-7890" />
             </div>
 
             <div className="form_area">
@@ -310,7 +305,7 @@ const Form = () => {
 
             <div className="form_area">
               <label className="FormLabel2" htmlFor="address_Line1">
-                Street Address
+                Street Address Line 1
               </label>
               <input
                 className="FormInput"
@@ -319,7 +314,7 @@ const Form = () => {
                 {...register("address_Line1")}
 
                 type="text"
-                placeholder=""
+                placeholder="e.g., 123 Main St"
               />
 
             </div>
@@ -335,7 +330,7 @@ const Form = () => {
                 {...register("address_Line2")}
 
                 type="text"
-                placeholder=""
+                placeholder="Apartment, suite, unit, building, floor, etc. (optional)"
               />
 
             </div>
@@ -353,7 +348,7 @@ const Form = () => {
                   {...register("city")}
 
                   type="text"
-                  placeholder=""
+                  placeholder="e.g., New York"
                 />
 
               </div>
@@ -369,7 +364,7 @@ const Form = () => {
                   {...register("state")}
 
                   type="text"
-                  placeholder=""
+                  placeholder="e.g., NY"
                 />
 
               </div>
@@ -385,7 +380,7 @@ const Form = () => {
                   {...register("code")}
 
                   type="text"
-                  placeholder=""
+                  placeholder="e.g., 10001"
                 />
 
               </div>
@@ -512,7 +507,7 @@ const Form = () => {
                   {...register("emergency_phone")}
 
                   type="text"
-                  placeholder="+00123456789" />
+                  placeholder="+1 (123) 456-7890" />
               </div>
             </div>
 
@@ -566,7 +561,7 @@ const Form = () => {
                   id="experience_field"
                   cols={3}
                   rows={5}
-                  placeholder="describe your inquiry"
+                  placeholder="Provide description"
                 >
 
                 </textarea>
@@ -653,7 +648,7 @@ const Form = () => {
                 {...register("referral_name")}
 
                 type="text"
-                placeholder="" />
+                placeholder="Referral's first and last name" />
             </div>
           </div>
 

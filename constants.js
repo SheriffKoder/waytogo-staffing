@@ -225,11 +225,21 @@ const sectionFive_cards = [
     },
 ]
 
+// Form images
+const formImages = [
+    "/sectionFiveImages/1.jpg",
+    "/sectionFiveImages/2.jpg",
+    "/sectionFiveImages/3.jpg",
+    "/sectionFiveImages/4.jpg",
+    "/sectionFiveImages/5.jpg",
+  ];
+
 module.exports = {
     allText,
     nav_links,
     section2_cards,
     sectionThree_cards,
     sectionFour_contents,
-    sectionFive_cards
+    sectionFive_cards,
+    formImages
 }
