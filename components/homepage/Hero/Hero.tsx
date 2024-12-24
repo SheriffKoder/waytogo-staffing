@@ -129,6 +129,18 @@ const Hero = () => {
         scrub: true,
       },
     });
+
+    // change hero text color on entering the hero picture
+    gsap.to(".heroText", {
+      color: "white",
+      textShadow: "2px 2px 8px rgba(0,0,0,0.6), 0 0 4px rgba(0,0,0,0.4)",
+      scrollTrigger: {
+        trigger: ".zoomBox",
+        start: "top 90%",
+        end: "top 80%",
+        scrub: true,
+      },
+    });
   }, []);
 
   return (
@@ -147,17 +159,17 @@ const Hero = () => {
         >
           <h1
             className="heading1 heroText text-center vp3:text-start w-full
-                flex flex-col leading-snug"
+                flex flex-col leading-snug text-[#13162e]"
           >
             <span className="">WayToGo</span>
             <span className="vp4:w-full"> Staffing</span>
           </h1>
 
-          <p className="heading2 w-full heroText text-center flex flex-col flex-wrap gap-0 justify-center items-center vp3:items-start">
+          <p className="heading2 w-full heroText text-center flex flex-col flex-wrap gap-0 justify-center items-center vp3:items-start text-[#13162e]">
             <span className="flex flex-col vp4:flex-row items-center vp4:items-start justify-center leading-10">
               <span className="mx-auto">Your Partner for</span>
               <span>
-                <span className="signature mx-[0.5rem] text_shadow_1 brightness-[1.2]">
+                <span className="signature mx-[0.5rem] brightness-[1.2]">
                   Exceptional
                 </span>
                 <span>Talent,</span>
@@ -220,7 +232,7 @@ const Hero = () => {
             id="hero_bg"
             style={{
               // backgroundImage: `url(${allText.hero.mainImage})`,
-              background: `linear-gradient(45deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.35) 100%), url(${allText.hero.mainImage})`,
+              background: `linear-gradient(45deg, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.0) 100%), url(${allText.hero.mainImage})`,
               backgroundPosition: "top",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -237,7 +249,8 @@ const Hero = () => {
                 paragraph3 flex justify-center vp3:justify-start vp3:pl-[2rem]"
           >
             {/* text_shadow_white */}
-            <p className="text_shadow_0 f_ysa tracking-wider text-[min(calc(0.75rem+1.2vw),30px)] max-w-[min(700px,80vw)] vp5:max-w-[min(1000px,80vw)] text-center vp3:text-start">
+            <p className="text-white text-center f_ysa tracking-wider text-[min(calc(0.75rem+1.2vw),30px)] max-w-[min(700px,80vw)] vp5:max-w-[min(1000px,80vw)]"
+               style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.6), 0 0 4px rgba(0,0,0,0.4)" }}>
               Delivering tailored staffing solutions that prioritize quality,
               reliability, and trust—helping your business thrive with the right
               team.

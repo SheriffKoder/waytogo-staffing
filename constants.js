@@ -3,7 +3,7 @@ const allText = {
         header: "Staffing Agency - the way to go, join us",
         paragraph: "Staffing Agency - the way to go, join us. Staffing Agency - the way to go, join us",
         image: "images/hero/hero.jpeg",
-        mainImage: "images/hero/hero-bg.jpg",
+        mainImage: "images/hero/hero-bg.png",
         cardImage1: "images/hero/card1.jpeg",
         cardImage2: "images/hero/card2.jpeg",
     },
@@ -209,11 +209,11 @@ const sectionFive_cards = [
 
 // Form images
 const formImages = [
-    "/images/sectionFiveImages/1.png",
-    "/images/sectionFiveImages/2.png",
-    "/images/sectionFiveImages/3.png",
-    "/images/sectionFiveImages/4.jpg",
-    "/images/sectionFiveImages/5.png",
+    "/images/sectionFiveImages/banquet-server.jpeg",
+    "/images/sectionFiveImages/banquet-captain.jpg",
+    "/images/sectionFiveImages/maitre-d.jpg",
+    "/images/sectionFiveImages/concession-stand.jpg",
+    "/images/sectionFiveImages/line-cook.jpg",
 ];
 
 module.exports = {
